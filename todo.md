@@ -73,3 +73,7 @@
 - [x] Remove the top text-based 관리자 button from public headers
 - [x] Add a distinct accessible admin icon link to the footer and preserve discoverability on mobile
 - [x] Verify cross-page navigation, responsive headers/footers, accessibility, tests, and save the navigation checkpoint
+
+- [x] Review the failed AgentOrchestration visual edit target and inspect all Hero text/background color declarations
+- [x] Apply explicit readable text colors to the orchestration core, node labels, status copy, and supporting metadata
+- [x] Verify contrast and responsive rendering, run TypeScript/Vitest, and save the visual correction checkpoint
