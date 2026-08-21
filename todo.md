@@ -40,3 +40,8 @@
 - [x] Create a reusable SVG wordmark and compact SVG favicon with the Agentro rounded-square system motif
 - [x] Apply the brand assets to public navigation, webinar header, instructor/program headers, admin shell, page title, and favicon metadata
 - [x] Verify logo legibility and responsive sizing, then run checks and save the branding checkpoint
+
+- [x] Design webinar and instructor social preview compositions using the generated Agentro wordmark and brand mark
+- [x] Create optimized OG image assets for webinar and instructor profile sharing
+- [x] Add route-aware Open Graph and Twitter Card metadata for webinar and instructor pages
+- [x] Verify OG assets and metadata, run checks, and save the social sharing checkpoint
