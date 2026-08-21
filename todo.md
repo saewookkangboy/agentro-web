@@ -64,3 +64,7 @@
 - [x] Apply the new palette across global CSS, Hero, buttons, cards, states, navigation, webinar, instructor, program, and admin surfaces
 - [x] Add unique copy-link buttons to the top-right of each curriculum section with hash URLs and copied feedback
 - [x] Verify contrast, responsive placement, clipboard fallback, tests, and save the palette/link checkpoint
+
+- [x] Audit the project for all legacy green color literals, green-named tokens, gradients, shadows, and inline styles
+- [x] Replace all green visual treatments with the Color Hunt blue/yellow/magenta/maroon palette across shared, public, and admin surfaces
+- [x] Verify no legacy green values remain, then run screenshots, TypeScript/Vitest, and save the palette cleanup checkpoint
