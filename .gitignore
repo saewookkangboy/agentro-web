@@ -9,8 +9,9 @@ build/
 /public
 /server.js
 
-# Vercel
 .vercel
+.env.vercel.secrets
+
 
 # Environment variables
 .env

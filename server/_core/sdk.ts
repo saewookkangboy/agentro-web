@@ -6,7 +6,7 @@ import type { Request } from "express";
 import { SignJWT, jwtVerify } from "jose";
 import type { User } from "../../drizzle/schema";
 import * as db from "../db";
-import { ENV } from "./env";
+import { ENV, LOCAL_ADMIN_OPEN_ID } from "./env";
 import type {
   ExchangeTokenRequest,
   ExchangeTokenResponse,
@@ -287,6 +287,19 @@ class SDKServer {
 
     const sessionUserId = session.openId;
     const signedInAt = new Date();
+
+    if (sessionUserId === LOCAL_ADMIN_OPEN_ID) {
+      await db.upsertUser({
+        openId: LOCAL_ADMIN_OPEN_ID,
+        name: session.name || "Agentro Admin",
+        loginMethod: "password",
+        role: "admin",
+        lastSignedIn: signedInAt,
+      });
+      const localAdmin = await db.getUserByOpenId(LOCAL_ADMIN_OPEN_ID);
+      return localAdmin ?? db.buildLocalAdminUser();
+    }
+
     let user = await db.getUserByOpenId(sessionUserId);
 
     // If user not in DB, sync from OAuth server automatically

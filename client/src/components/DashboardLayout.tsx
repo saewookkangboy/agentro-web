@@ -21,12 +21,74 @@ import {
 } from "@/components/ui/sidebar";
 import { startLogin, isOAuthConfigured } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
+import { trpc } from "@/lib/trpc";
 import { BookOpen, ClipboardList, FileText, LayoutDashboard, LogOut, PanelLeft, Settings, Users, Video } from "lucide-react";
-import { CSSProperties, useEffect, useRef, useState } from "react";
+import { CSSProperties, FormEvent, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import Brand from "@/components/Brand";
 import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+
+function AdminLoginGate({ oauthReady }: { oauthReady: boolean }) {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const utils = trpc.useUtils();
+  const methods = trpc.auth.methods.useQuery();
+  const login = trpc.auth.loginWithPassword.useMutation({
+    onSuccess: async () => {
+      await utils.auth.me.invalidate();
+      window.location.reload();
+    },
+    onError: err => setError(err.message),
+  });
+  const passwordEnabled = methods.data?.password ?? true;
+
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    setError("");
+    login.mutate({ password });
+  };
+
+  return (
+    <div className="flex flex-col items-center gap-8 p-8 max-w-md w-full">
+      <div className="flex flex-col items-center gap-6">
+        <h1 className="text-2xl font-semibold tracking-tight text-center">
+          관리자 로그인이 필요합니다
+        </h1>
+        <p className="text-sm text-muted-foreground text-center max-w-sm">
+          콘텐츠 운영 대시보드에 접근하려면 비밀번호로 로그인하세요.
+        </p>
+      </div>
+      {passwordEnabled && (
+        <form onSubmit={onSubmit} className="w-full flex flex-col gap-3">
+          <Input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            placeholder="관리자 비밀번호"
+            autoComplete="current-password"
+            required
+          />
+          {error && <p className="text-sm text-destructive">{error}</p>}
+          <Button type="submit" size="lg" className="w-full" disabled={login.isPending}>
+            {login.isPending ? "로그인 중…" : "비밀번호로 로그인"}
+          </Button>
+        </form>
+      )}
+      {oauthReady && (
+        <Button
+          onClick={() => startLogin()}
+          size="lg"
+          variant="outline"
+          className="w-full"
+        >
+          OAuth로 로그인
+        </Button>
+      )}
+    </div>
+  );
+}
 
 const menuItems = [
   { icon: LayoutDashboard, label: "Overview", path: "/admin" },
@@ -63,29 +125,10 @@ export default function DashboardLayout({
   }
 
   if (!user) {
-    const oauthReady = isOAuthConfigured();
+    const methods = { oauth: isOAuthConfigured(), password: true };
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="flex flex-col items-center gap-8 p-8 max-w-md w-full">
-          <div className="flex flex-col items-center gap-6">
-            <h1 className="text-2xl font-semibold tracking-tight text-center">
-              관리자 로그인이 필요합니다
-            </h1>
-            <p className="text-sm text-muted-foreground text-center max-w-sm">
-              {oauthReady
-                ? "콘텐츠 운영 대시보드에 접근하려면 로그인하세요."
-                : "OAuth 환경 변수(VITE_OAUTH_PORTAL_URL, VITE_APP_ID)가 설정되지 않아 로그인을 시작할 수 없습니다."}
-            </p>
-          </div>
-          <Button
-            onClick={() => startLogin()}
-            size="lg"
-            className="w-full shadow-lg hover:shadow-xl transition-all"
-            disabled={!oauthReady}
-          >
-            {oauthReady ? "로그인" : "로그인 설정 필요"}
-          </Button>
-        </div>
+        <AdminLoginGate oauthReady={methods.oauth} />
       </div>
     );
   }

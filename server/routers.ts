@@ -1,12 +1,33 @@
 import { z } from "zod";
 import { eq } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
-import { COOKIE_NAME } from "../shared/const";
+import { COOKIE_NAME, ONE_YEAR_MS } from "../shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
+import { ENV, LOCAL_ADMIN_OPEN_ID } from "./_core/env";
+import { sdk } from "./_core/sdk";
 import { systemRouter } from "./_core/systemRouter";
 import { adminProcedure, publicProcedure, router } from "./_core/trpc";
-import { getAllAdminContent, getDb, getPublicContent, findInstructor, findProgram, registerWebinarApplicant, applicantsCsv, saveAudit, saveSetting } from "./db";
-import { faqs, instructorItems, instructors, programs, programSteps, webinarSettings, webinarApplicants } from "../drizzle/schema";
+import {
+  applicantsCsv,
+  findInstructor,
+  findProgram,
+  getAllAdminContent,
+  getDb,
+  getPublicContent,
+  registerWebinarApplicant,
+  saveAudit,
+  saveSetting,
+  upsertUser,
+} from "./db";
+import {
+  faqs,
+  instructorItems,
+  instructors,
+  programs,
+  programSteps,
+  webinarApplicants,
+  webinarSettings,
+} from "../drizzle/schema";
 import { storagePut } from "./storage";
 import { notifyOwner } from "./_core/notification";
 
@@ -17,7 +38,48 @@ export const appRouter = router({
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
-    logout: publicProcedure.mutation(({ ctx }) => { const cookieOptions = getSessionCookieOptions(ctx.req); ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 }); return { success: true } as const; }),
+    methods: publicProcedure.query(() => ({
+      oauth: Boolean(ENV.oAuthServerUrl && ENV.appId),
+      password: Boolean(ENV.adminPassword),
+    })),
+    loginWithPassword: publicProcedure
+      .input(z.object({ password: z.string().min(1) }))
+      .mutation(async ({ input, ctx }) => {
+        if (!ENV.adminPassword) {
+          throw new TRPCError({
+            code: "PRECONDITION_FAILED",
+            message: "비밀번호 로그인이 설정되지 않았습니다.",
+          });
+        }
+        if (input.password !== ENV.adminPassword) {
+          throw new TRPCError({
+            code: "UNAUTHORIZED",
+            message: "비밀번호가 올바르지 않습니다.",
+          });
+        }
+        await upsertUser({
+          openId: LOCAL_ADMIN_OPEN_ID,
+          name: "Agentro Admin",
+          loginMethod: "password",
+          role: "admin",
+          lastSignedIn: new Date(),
+        });
+        const sessionToken = await sdk.createSessionToken(LOCAL_ADMIN_OPEN_ID, {
+          name: "Agentro Admin",
+          expiresInMs: ONE_YEAR_MS,
+        });
+        const cookieOptions = getSessionCookieOptions(ctx.req);
+        ctx.res.cookie(COOKIE_NAME, sessionToken, {
+          ...cookieOptions,
+          maxAge: ONE_YEAR_MS,
+        });
+        return { success: true } as const;
+      }),
+    logout: publicProcedure.mutation(({ ctx }) => {
+      const cookieOptions = getSessionCookieOptions(ctx.req);
+      ctx.res.clearCookie(COOKIE_NAME, { ...cookieOptions, maxAge: -1 });
+      return { success: true } as const;
+    }),
   }),
   content: router({
     public: publicProcedure.query(() => getPublicContent()),

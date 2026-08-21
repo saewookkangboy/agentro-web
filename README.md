@@ -102,9 +102,10 @@ vercel --prod        # Production
 
 | 변수 | 용도 |
 | --- | --- |
-| `DATABASE_URL` | MySQL 연결 문자열 |
+| `DATABASE_URL` | Postgres(Supabase) 연결 문자열 |
 | `JWT_SECRET` | 세션 쿠키 서명 |
-| `OAUTH_SERVER_URL` | 관리자 OAuth |
+| `ADMIN_PASSWORD` | 관리자 비밀번호 로그인 (OAuth 대체) |
+| `OAUTH_SERVER_URL` | 관리자 OAuth (선택) |
 | `OWNER_OPEN_ID` | 소유자/알림 대상 |
 | `VITE_APP_ID` | 앱 식별자 (서버·클라이언트) |
 | `VITE_OAUTH_PORTAL_URL` | 클라이언트 OAuth 포털 URL |
