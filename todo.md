@@ -92,3 +92,9 @@
 - [x] Replace hardcoded Hero node copy with CMS-backed descriptions and curriculum-derived fallbacks
 - [x] Add administrator fields for all four Hero node descriptions with hydration, save, and success states
 - [x] Add tests and verify public/admin data flow, responsive rendering, and save a new checkpoint
+
+- [x] Define typed CMS structures for curriculum track rows, section headers, chips, and process steps
+- [x] Add safe public/admin curriculum content loading and persistence through the existing site settings CMS
+- [x] Replace Home hardcoded curriculum and process copy with CMS-backed content and fallbacks
+- [x] Add administrator editors for all curriculum section text, chips, and process steps
+- [x] Add tests, verify public/admin rendering at desktop and mobile widths, and save a new checkpoint

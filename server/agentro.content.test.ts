@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { appRouter } from "./routers";
 import { toApplicantsCsv } from "./db";
 import { heroNodeDefaults, parseHeroNodes, serializeHeroNodes } from "../shared/hero";
+import { curriculumDefaults, parseCurriculumContent, serializeCurriculumContent } from "../shared/curriculum";
 import type { TrpcContext } from "./_core/context";
 
 function context(role: "admin" | "user"): TrpcContext {
@@ -26,6 +27,14 @@ describe("Agentro content permissions", () => {
     expect(parseHeroNodes("not-json")).toEqual(heroNodeDefaults);
     expect(parseHeroNodes(undefined, ["실제 커리큘럼 맥락", "실제 판단 기준", "실제 도구 연결", "실제 운영 결과"])[0].description).toBe("실제 커리큘럼 맥락");
     expect(JSON.parse(serializeHeroNodes(nodes))[0]).toMatchObject({ key: "context", targetId: "curriculum-context" });
+  });
+  it("parses and serializes editable curriculum sections safely", () => {
+    const curriculum = parseCurriculumContent(JSON.stringify({ tracksTitle: "새 트랙 제목", tracks: [{ title: "새 Agent 트랙", chips: ["새 칩"] }], processSteps: [{ title: "새 단계" }] }));
+    expect(curriculum.tracksTitle).toBe("새 트랙 제목");
+    expect(curriculum.tracks[0]).toMatchObject({ title: "새 Agent 트랙", chips: ["새 칩"] });
+    expect(curriculum.processSteps[0].title).toBe("새 단계");
+    expect(parseCurriculumContent("not-json")).toEqual(curriculumDefaults);
+    expect(JSON.parse(serializeCurriculumContent(curriculum)).tracks[0].title).toBe("새 Agent 트랙");
   });
   it("quotes applicant CSV fields safely", () => {
     const csv = toApplicantsCsv([{ name: "홍길동", email: "h@example.com", role: "콘텐츠, 마케팅", status: "new", createdAt: new Date("2026-08-21T00:00:00Z") }]);
