@@ -1,4 +1,4 @@
-import { Moon, Settings2, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { Link } from "wouter";
 import Brand from "@/components/Brand";
 import { useTheme } from "@/contexts/ThemeContext";
@@ -49,7 +49,13 @@ export function PublicFooter() {
         <div><h4>EXPLORE</h4><ul><li><Link href="/programs">프로그램</Link></li><li><Link href="/instructors">강사진</Link></li><li><Link href="/webinar">웨비나</Link></li></ul></div>
         <div><h4>FOR TEAMS</h4><ul><li><Link href="/corporate">기업교육</Link></li><li><Link href="/contact">문의하기</Link></li></ul></div>
         <div><h4>POLICY</h4><ul><li><Link href="/privacy">개인정보처리방침</Link></li><li><Link href="/terms">이용약관</Link></li></ul></div>
-        <div className="footer-admin-cell"><Link className="footer-admin-link" href="/admin" aria-label="관리자 페이지" title="관리자 페이지"><Settings2 size={16} aria-hidden="true" /></Link></div>
+        <div className="footer-admin-cell">
+          <Link className="footer-admin-mark" href="/admin" tabIndex={-1}>
+            <span className="footer-admin-mark-circle" aria-hidden="true">
+              <span className="footer-admin-mark-triangle" />
+            </span>
+          </Link>
+        </div>
       </div>
     </footer>
   );
