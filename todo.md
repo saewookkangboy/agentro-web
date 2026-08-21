@@ -81,3 +81,8 @@
 - [x] Inspect the failed Instructors detail edit target and review current profile container spacing
 - [x] Rebalance left/right margins and the two-column detail grid for desktop and mobile
 - [x] Verify the instructor detail route visually, run TypeScript/Vitest, and save the spacing correction checkpoint
+
+- [x] Review the failed AgentOrchestration white-text edit target and the malformed Home Hero inline style values
+- [x] Remove invalid empty px styles, set all four Hero node text labels to white, and smooth the swirl background gradient boundaries
+- [x] Tune Hero headline letter spacing and line spacing for readability on desktop and mobile
+- [x] Verify the corrected Hero visually, run TypeScript/Vitest, and save the Hero cleanup checkpoint

@@ -62,3 +62,6 @@ body{font-family:var(--sans)}h1,h2,h3,h4{font-family:var(--serif);font-weight:60
 
 /* Instructor detail spacing correction */
 .profile-page{padding:70px 28px}.profile-page>.eyebrow{display:inline-flex;margin-left:2px}.profile-hero,.profile-columns{width:100%}@media (max-width:560px){.profile-page{padding-left:18px;padding-right:18px;padding-top:54px}.profile-hero{gap:24px}.profile-columns{margin-top:42px}}
+
+/* Home Hero visual edit correction */
+.hero h1{letter-spacing:-.045em;line-height:1.08}.hero-orchestrated .hero-overlay{background:radial-gradient(circle at 65% 42%,transparent 0 28%,rgba(17,7,18,.12) 62%,rgba(17,7,18,.68) 100%);mix-blend-mode:multiply}.agent-node-copy>span,.agent-node strong{color:#fff!important}.agent-node.is-active .agent-node-copy>span,.agent-node.is-active strong{color:#fff!important}@media (max-width:600px){.hero h1{letter-spacing:-.035em;line-height:1.12}}
