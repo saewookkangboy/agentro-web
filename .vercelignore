@@ -1,6 +1,7 @@
 # Do not upload build artifacts — they are produced by buildCommand on Vercel.
-public
-dist
+# Use a leading slash so only the repo-root folders match (not client/public).
+/public
+/dist
 .vercel
 .env*.local
 .env.vercel.secrets
