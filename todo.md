@@ -20,4 +20,4 @@
 - [x] Add loading, empty, error, validation, and success states across public and admin flows
 - [x] Add responsive and accessibility verification for desktop and mobile
 - [x] Write and run Vitest coverage for content, permissions, registration, CSV, and upload helpers
-- [ ] Save final checkpoint after all completed items are marked complete
+- [x] Save final checkpoint after all completed items are marked complete
