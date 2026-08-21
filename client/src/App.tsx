@@ -5,38 +5,10 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Webinar from "./pages/Webinar";
+import Instructors from "./pages/Instructors";
+import Programs from "./pages/Programs";
+import AdminDashboard from "./pages/AdminDashboard";
 
-function Router() {
-  // make sure to consider if you need authentication for certain routes
-  return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
-function App() {
-  return (
-    <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
-  );
-}
-
-export default App;
+function Router(){return <Switch><Route path="/" component={Home}/><Route path="/webinar" component={Webinar}/><Route path="/instructors" component={Instructors}/><Route path="/instructors/:slug" component={Instructors}/><Route path="/programs" component={Programs}/><Route path="/programs/:slug" component={Programs}/><Route path="/admin" component={AdminDashboard}/><Route path="/admin/:section" component={AdminDashboard}/><Route path="/404" component={NotFound}/><Route component={NotFound}/></Switch>}
+export default function App(){return <ErrorBoundary><ThemeProvider defaultTheme="light" switchable><TooltipProvider><Toaster/><Router/></TooltipProvider></ThemeProvider></ErrorBoundary>}

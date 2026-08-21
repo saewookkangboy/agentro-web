@@ -1,0 +1,23 @@
+# Project TODO
+
+- [x] Establish Agentro deep-green visual system with monospace accents and persistent light/dark theme
+- [x] Build responsive public navigation with mobile hamburger menu
+- [x] Build Home landing page with WebGL/shader-style dynamic hero, metric ribbon, curriculum tracks, process, cases, instructor preview, program comparison, and FAQ
+- [x] Build webinar pre-registration page with orb/space visual treatment, benefits, counter, form validation, and submitted state
+- [x] Build instructor index and individual instructor profile routes with minimalist portfolio layout
+- [x] Build curriculum/program listing and detail routes with tracks, learning steps, schedule, price, and enrollment CTA
+- [x] Design and migrate database schema for editable site settings, page sections, instructors, instructor curriculum items, programs, program steps, FAQs, webinar settings, and webinar applicants
+- [x] Add public tRPC queries for published content and webinar registration mutation
+- [x] Add protected admin procedures with admin role enforcement for all CRUD operations
+- [x] Build DashboardLayout-based admin dashboard with sidebar navigation
+- [x] Build admin content editor for global settings and Home sections
+- [x] Build admin webinar editor and applicant management table
+- [x] Build admin instructor CRUD with public/private toggle and curriculum item management
+- [x] Build admin program and FAQ CRUD interfaces
+- [x] Implement instructor photo upload to S3 and automatic profile URL connection
+- [x] Implement webinar applicant CSV export
+- [x] Implement administrator in-app notification on webinar submission
+- [x] Add loading, empty, error, validation, and success states across public and admin flows
+- [x] Add responsive and accessibility verification for desktop and mobile
+- [x] Write and run Vitest coverage for content, permissions, registration, CSV, and upload helpers
+- [ ] Save final checkpoint after all completed items are marked complete
