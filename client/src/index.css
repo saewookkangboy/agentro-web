@@ -65,3 +65,5 @@ body{font-family:var(--sans)}h1,h2,h3,h4{font-family:var(--serif);font-weight:60
 
 /* Home Hero visual edit correction */
 .hero h1{letter-spacing:-.045em;line-height:1.08}.hero-orchestrated .hero-overlay{background:radial-gradient(circle at 65% 42%,transparent 0 28%,rgba(17,7,18,.12) 62%,rgba(17,7,18,.68) 100%);mix-blend-mode:multiply}.agent-node-copy>span,.agent-node strong{color:#fff!important}.agent-node.is-active .agent-node-copy>span,.agent-node.is-active strong{color:#fff!important}@media (max-width:600px){.hero h1{letter-spacing:-.035em;line-height:1.12}}
+
+.agent-node-copy small{display:block;max-width:142px;margin-top:4px;color:rgba(255,255,255,.82);font-family:var(--font-body);font-size:10px;line-height:1.35;letter-spacing:-.02em;white-space:normal}.agent-node-copy strong{display:block}.agent-node:hover .agent-node-copy small,.agent-node.is-active .agent-node-copy small{color:#fff}@media (max-width:600px){.agent-node-copy small{max-width:112px;font-size:9px}}

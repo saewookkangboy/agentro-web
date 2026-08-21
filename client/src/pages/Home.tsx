@@ -5,6 +5,8 @@ import ShaderCanvas from "@/components/ShaderCanvas";
 import AgentOrchestration from "@/components/AgentOrchestration";
 import CopySectionLink from "@/components/CopySectionLink";
 import { PublicFooter, PublicHeader } from "@/components/PublicChrome";
+import { trpc } from "@/lib/trpc";
+import { HERO_NODES_SETTING_KEY, parseHeroNodes } from "@shared/hero";
 
 const tracks = [
   { code: "TRACK / 01", title: "AI Agent Builder", body: "조사·판단·실행·검증을 연결해, 반복 업무를 대신 움직이는 개인 또는 팀용 Agent를 설계합니다.", chips: ["업무 분해", "컨텍스트 설계", "도구 연결"] },
@@ -19,6 +21,7 @@ const instructors = [
 const plans: Array<[string, string, string, string[]]> = [["입문 워크숍","3–4시간","하나의 업무를 빠르게 완성하는 시작점",["완성 경험 중심","라이브 실습","템플릿 제공"]],["프로젝트 코호트","4주","내 업무에 연결된 시스템을 만드는 대표 과정",["주 1회 라이브","개인 피드백","운영 체크리스트"]],["기업 맞춤 과정","맞춤 설계","팀의 업무와 수준에 맞춰 설계하는 AX 교육",["사전 진단","적용 과제","결과 리포트"]]];
 const curriculumAnchors = ["curriculum-context", "curriculum-decision", "curriculum-tools"];
 const curriculumTargetIds = [...curriculumAnchors, "curriculum-output"];
+const curriculumFallbackDescriptions = [...tracks.map(track => track.body), "진단부터 운영까지 실제 업무 흐름에 맞춰 결과물을 적용하고 반복 가능한 기준으로 남깁니다."];
 
 const faqs = [
   ["개발을 몰라도 참여할 수 있나요?", "코드보다 업무 구조와 결과물 설계를 먼저 다룹니다. 현재 업무를 설명할 수 있다면 시작할 수 있습니다."],
@@ -31,6 +34,8 @@ export default function Home() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
   const [arrivalHighlight, setArrivalHighlight] = useState<string | null>(null);
   const [showTop, setShowTop] = useState(false);
+  const publicContent = trpc.content.public.useQuery();
+  const heroNodes = parseHeroNodes(publicContent.data?.settings.find(setting => setting.key === HERO_NODES_SETTING_KEY)?.value, curriculumFallbackDescriptions);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -68,7 +73,7 @@ export default function Home() {
   };
   return <div>
     <PublicHeader />
-    <section className="hero hero-orchestrated"><ShaderCanvas /><div className="hero-overlay" /><div className="container hero-content"><div className="hero-copy-column"><div className="eyebrow">Agentro education / Build what moves</div><h1>AI를 배우는 시간을 넘어,<br /><em>내 업무를 움직이는</em> 시스템을 만듭니다.</h1><p className="hero-copy">AI Agent 구축부터 콘텐츠 제작, 마케팅 운영 자동화까지. 실습과 피드백을 통해 현업에 바로 적용할 결과물을 완성합니다.</p><div className="cta-row"><Link href="/programs" className="btn light">교육 프로그램 보기 <ArrowUpRight size={16} /></Link><Link href="/webinar" className="btn ghost">웨비나 사전 신청</Link></div></div><AgentOrchestration activeNodeId={activeNode} onNodeActivate={activateNode} /></div></section>
+    <section className="hero hero-orchestrated"><ShaderCanvas /><div className="hero-overlay" /><div className="container hero-content"><div className="hero-copy-column"><div className="eyebrow">Agentro education / Build what moves</div><h1>AI를 배우는 시간을 넘어,<br /><em>내 업무를 움직이는</em> 시스템을 만듭니다.</h1><p className="hero-copy">AI Agent 구축부터 콘텐츠 제작, 마케팅 운영 자동화까지. 실습과 피드백을 통해 현업에 바로 적용할 결과물을 완성합니다.</p><div className="cta-row"><Link href="/programs" className="btn light">교육 프로그램 보기 <ArrowUpRight size={16} /></Link><Link href="/webinar" className="btn ghost">웨비나 사전 신청</Link></div></div><AgentOrchestration nodes={heroNodes} activeNodeId={activeNode} onNodeActivate={activateNode} /></div></section>
     <section className="metric-ribbon"><div className="container metric-grid">{[["01", "내 업무 기준 설계"],["4주", "프로젝트형 코호트"],["1:1", "개인·팀 피드백"],["HITL", "사람이 검수하는 운영"]].map(([a,b])=><div className="metric" key={a}><strong>{a}</strong><span>{b}</span></div>)}</div></section>
     <section className="section"><div className="container"><div className="section-head"><div className="eyebrow">01 / curriculum tracks</div><h2>도구를 배우는 대신,<br />업무의 구조를 다시 설계합니다.</h2><p>세 개의 실무 트랙은 사용하는 도구가 아니라, 반복되는 업무와 결과물을 중심으로 구성됩니다.</p></div>{tracks.map((t,index)=><div className={`track-row ${arrivalHighlight === curriculumAnchors[index] ? "arrival-highlight" : ""}`} id={curriculumAnchors[index]} tabIndex={-1} key={t.code}><CopySectionLink targetId={curriculumAnchors[index]} /><div className="track-code">{t.code}</div><div><h3>{t.title}</h3><p>{t.body}</p></div><div className="chips">{t.chips.map(c=><span className="chip" key={c}>{c}</span>)}</div></div>)}</div></section>
     <section id="process" className="section process"><div className="container"><div id="curriculum-output" tabIndex={-1} className={`section-head ${arrivalHighlight === "curriculum-output" ? "arrival-highlight" : ""}`}><CopySectionLink targetId="curriculum-output" /><div className="eyebrow">02 / how it works</div><h2>진단에서 운영까지,<br />한 번의 완성으로 끝나지 않게.</h2><p>학습이 끝난 뒤에도 다시 사용할 수 있도록 업무 맥락과 운영 기준까지 남깁니다.</p></div><div className="process-grid">{[["01","진단","반복 업무와 현재 흐름을 찾습니다."],["02","설계","결과물과 판단 기준을 구조화합니다."],["03","실습","실제 데이터로 시스템을 연결합니다."],["04","피드백","개인·팀 상황에 맞춰 다듬습니다."],["05","적용","현업에서 다시 움직이도록 운영합니다."]].map(([n,t,d])=><div className="process-step" key={n}><div className="mono">{n}</div><h4>{t}</h4><p>{d}</p></div>)}</div></div></section>

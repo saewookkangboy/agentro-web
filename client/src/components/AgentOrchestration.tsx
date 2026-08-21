@@ -1,18 +1,16 @@
 import { ArrowUpRight, BrainCircuit, Database, GitBranch, Sparkles, Wrench } from "lucide-react";
+import type { HeroNode } from "@shared/hero";
 
 type AgentOrchestrationProps = {
   activeNodeId?: string | null;
   onNodeActivate: (targetId: string) => void;
+  nodes: HeroNode[];
 };
 
-const nodes = [
-  { label: "CONTEXT", title: "업무 맥락", icon: Database, className: "node-context", targetId: "curriculum-context" },
-  { label: "DECISION", title: "판단 기준", icon: BrainCircuit, className: "node-decision", targetId: "curriculum-decision" },
-  { label: "TOOLS", title: "도구 연결", icon: Wrench, className: "node-tools", targetId: "curriculum-tools" },
-  { label: "OUTPUT", title: "운영 결과", icon: GitBranch, className: "node-output", targetId: "curriculum-output" },
-];
+const icons = [Database, BrainCircuit, Wrench, GitBranch];
+const classNames = ["node-context", "node-decision", "node-tools", "node-output"];
 
-export default function AgentOrchestration({ activeNodeId, onNodeActivate }: AgentOrchestrationProps) {
+export default function AgentOrchestration({ activeNodeId, onNodeActivate, nodes }: AgentOrchestrationProps) {
   return (
     <div className="orchestration" role="img" aria-label="업무 맥락, 판단 기준, 도구 연결, 운영 결과가 하나의 Agent 시스템으로 연결되는 애니메이션">
       <div className="orchestration-grid" aria-hidden="true" />
@@ -22,13 +20,16 @@ export default function AgentOrchestration({ activeNodeId, onNodeActivate }: Age
       <div className="orchestration-line line-two" aria-hidden="true" />
       <div className="orchestration-line line-three" aria-hidden="true" />
       <div className="orchestration-line line-four" aria-hidden="true" />
-      {nodes.map(({ label, title, icon: Icon, className, targetId }) => (
-        <button className={`agent-node ${className} ${activeNodeId === targetId ? "is-active" : ""}`} key={label} type="button" onClick={() => onNodeActivate(targetId)} aria-label={`${title} 커리큘럼으로 이동`}>
-          <span className="agent-node-icon"><Icon size={16} /></span>
-          <span className="agent-node-copy"><span>{label}</span><strong>{title}</strong></span>
-          <span className="agent-node-dot" aria-hidden="true" />
-        </button>
-      ))}
+      {nodes.map((node, index) => {
+        const Icon = icons[index] ?? Sparkles;
+        return (
+          <button className={`agent-node ${classNames[index] ?? ""} ${activeNodeId === node.targetId ? "is-active" : ""}`} key={node.key} type="button" onClick={() => onNodeActivate(node.targetId)} aria-label={`${node.title} 커리큘럼으로 이동`} title={node.description}>
+            <span className="agent-node-icon"><Icon size={16} /></span>
+            <span className="agent-node-copy"><span>{node.label}</span><strong>{node.title}</strong><small>{node.description}</small></span>
+            <span className="agent-node-dot" aria-hidden="true" />
+          </button>
+        );
+      })}
       <div className="agent-core">
         <div className="agent-core-pulse" />
         <div className="agent-core-icon"><Sparkles size={20} /></div>

@@ -86,3 +86,9 @@
 - [x] Remove invalid empty px styles, set all four Hero node text labels to white, and smooth the swirl background gradient boundaries
 - [x] Tune Hero headline letter spacing and line spacing for readability on desktop and mobile
 - [x] Verify the corrected Hero visually, run TypeScript/Vitest, and save the Hero cleanup checkpoint
+
+- [x] Define a typed CMS setting format for four Hero node descriptions tied to curriculum anchors
+- [x] Extend public/admin content loading and protected setting save coverage for Hero node descriptions
+- [x] Replace hardcoded Hero node copy with CMS-backed descriptions and curriculum-derived fallbacks
+- [x] Add administrator fields for all four Hero node descriptions with hydration, save, and success states
+- [x] Add tests and verify public/admin data flow, responsive rendering, and save a new checkpoint
