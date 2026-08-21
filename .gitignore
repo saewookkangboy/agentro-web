@@ -6,6 +6,10 @@
 dist/
 build/
 *.dist
+/public
+
+# Vercel
+.vercel
 
 # Environment variables
 .env
@@ -13,6 +17,7 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+.env*.local
 
 # IDE and editor files
 .vscode/

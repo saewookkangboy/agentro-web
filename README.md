@@ -80,6 +80,24 @@ pnpm dev
 
 기본 주소: [http://localhost:3000](http://localhost:3000)
 
+### Vercel 배포
+
+Express + Vite SPA를 Vercel Function으로 배포합니다. 엔트리는 루트 `server.ts`입니다.
+
+1. **환경 변수** — `.env.example`을 참고해 Vercel Project Settings에 등록합니다.  
+   `VITE_*` 변수는 **Build**와 **Runtime** 모두에 필요합니다.
+2. **MySQL** — Vercel은 MySQL을 호스팅하지 않습니다. 외부 MySQL(`DATABASE_URL`)이 필요합니다.
+3. **배포**
+
+```bash
+vercel link          # 팀/프로젝트 연결
+vercel env pull      # 선택: 로컬 .env.local 동기화
+vercel               # Preview
+vercel --prod        # Production
+```
+
+또는 Git 저장소를 Vercel에 연결하면 push 시 자동 배포됩니다.
+
 ### 환경 변수
 
 | 변수 | 용도 |
@@ -88,20 +106,23 @@ pnpm dev
 | `JWT_SECRET` | 세션 쿠키 서명 |
 | `OAUTH_SERVER_URL` | 관리자 OAuth |
 | `OWNER_OPEN_ID` | 소유자/알림 대상 |
-| `VITE_APP_ID` | 앱 식별자 |
+| `VITE_APP_ID` | 앱 식별자 (서버·클라이언트) |
+| `VITE_OAUTH_PORTAL_URL` | 클라이언트 OAuth 포털 URL |
+| `VITE_FRONTEND_FORGE_API_URL` / `VITE_FRONTEND_FORGE_API_KEY` | 프론트 Forge(지도 등) |
 | `BUILT_IN_FORGE_API_URL` / `BUILT_IN_FORGE_API_KEY` | 스토리지·알림 등 내장 Forge API |
-| `PORT` | 서버 포트 (기본 `3000`) |
+| `PORT` | 서버 포트 (기본 `3000`, Vercel에서는 불필요) |
 
 ### 자주 쓰는 스크립트
 
 ```bash
-pnpm dev      # 개발 서버 (tsx watch)
-pnpm build    # Vite 클라이언트 + esbuild 서버
-pnpm start    # 프로덕션 서버
-pnpm check    # TypeScript
-pnpm test     # Vitest
-pnpm format   # Prettier
-pnpm db:push  # Drizzle generate + migrate
+pnpm dev           # 개발 서버 (tsx watch)
+pnpm build:client  # Vite 클라이언트 → dist/public + public/
+pnpm build         # 클라이언트 + esbuild 서버 (Node 프로덕션)
+pnpm start         # 프로덕션 서버
+pnpm check         # TypeScript
+pnpm test          # Vitest
+pnpm format        # Prettier
+pnpm db:push       # Drizzle generate + migrate
 ```
 
 ---

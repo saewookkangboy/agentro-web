@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "express",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm run build:client",
+  "functions": {
+    "server.ts": {
+      "includeFiles": "public/**",
+      "maxDuration": 30
+    }
+  }
+}
