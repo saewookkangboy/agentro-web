@@ -30,3 +30,8 @@
 - [x] Improve admin dashboard hierarchy, navigation, tables, and editor affordances
 - [x] Re-run desktop/mobile screenshots, TypeScript, and Vitest checks after the design pass
 - [x] Save a new design refinement checkpoint
+
+- [x] Replace the current font import with the user-provided Google Fonts stylesheet
+- [x] Apply IBM Plex Sans KR, IBM Plex Sans, Gowun Batang, Hahmlet, Noto Sans KR, Nanum Gothic, and Gowun Dodum through explicit role-based typography tokens across the site
+- [x] Verify typography hierarchy and responsive readability on public and admin routes
+- [x] Run TypeScript/Vitest checks and save the font refinement checkpoint
