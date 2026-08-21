@@ -1,5 +1,7 @@
 import { Link } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
+import wordmark from "@/assets/brand/agentro-wordmark.svg";
+import wordmarkKnockout from "@/assets/brand/agentro-wordmark-knockout.svg";
 
 type BrandProps = {
   /** Force knockout lockup (footer / night surfaces). Default follows theme. */
@@ -10,9 +12,7 @@ export default function Brand({ surface = "auto" }: BrandProps) {
   const { theme } = useTheme();
   const useKnockout =
     surface === "night" || (surface === "auto" && theme === "dark");
-  const src = useKnockout
-    ? "/agentro-wordmark-knockout.svg"
-    : "/agentro-wordmark.svg";
+  const src = useKnockout ? wordmarkKnockout : wordmark;
 
   return (
     <Link href="/" className="brand" aria-label="Agentro 홈으로 이동">
