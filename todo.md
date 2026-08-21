@@ -50,3 +50,7 @@
 - [x] Design an orchestration-style Hero animation state model with reduced-motion fallback
 - [x] Replace the Home Hero visual treatment while preserving Agentro copy, CTA, and mobile navigation
 - [x] Verify Hero animation performance, responsive behavior, accessibility, and save the Hero refinement checkpoint
+
+- [x] Map Hero nodes to the corresponding curriculum track anchors
+- [x] Add click and keyboard activation with smooth scrolling and URL hash updates
+- [x] Verify focus states, reduced-motion behavior, mobile interaction, and save the navigation checkpoint
