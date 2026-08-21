@@ -77,3 +77,7 @@
 - [x] Review the failed AgentOrchestration visual edit target and inspect all Hero text/background color declarations
 - [x] Apply explicit readable text colors to the orchestration core, node labels, status copy, and supporting metadata
 - [x] Verify contrast and responsive rendering, run TypeScript/Vitest, and save the visual correction checkpoint
+
+- [x] Inspect the failed Instructors detail edit target and review current profile container spacing
+- [x] Rebalance left/right margins and the two-column detail grid for desktop and mobile
+- [x] Verify the instructor detail route visually, run TypeScript/Vitest, and save the spacing correction checkpoint

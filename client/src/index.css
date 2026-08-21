@@ -59,3 +59,6 @@ body{font-family:var(--sans)}h1,h2,h3,h4{font-family:var(--serif);font-weight:60
 
 /* Hero orchestration contrast correction */
 .orchestration{color:#fff9e8}.agent-node{color:#fff9e8}.agent-node-copy>span{color:#ffcf4d}.agent-node strong{color:#fff9e8}.agent-core span{color:#ffcf4d}.agent-core strong{color:#fff9e8}.agent-core small{color:#fff9e8}.orchestration-footer{color:#f0c9d8}.orchestration-footer span:last-child{color:#ffcf4d}.agent-node:focus-visible{outline-color:#ffcf4d}.agent-node.is-active .agent-node-copy>span{color:#fff9e8}
+
+/* Instructor detail spacing correction */
+.profile-page{padding:70px 28px}.profile-page>.eyebrow{display:inline-flex;margin-left:2px}.profile-hero,.profile-columns{width:100%}@media (max-width:560px){.profile-page{padding-left:18px;padding-right:18px;padding-top:54px}.profile-hero{gap:24px}.profile-columns{margin-top:42px}}
