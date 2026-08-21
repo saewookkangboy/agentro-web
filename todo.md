@@ -59,3 +59,8 @@
 - [x] Track curriculum scroll position and show the corresponding active state on Hero nodes
 - [x] Add temporary arrival highlighting to curriculum sections after Hero node navigation
 - [x] Verify desktop/mobile scrolling, keyboard behavior, reduced-motion behavior, tests, and save the interaction checkpoint
+
+- [x] Review the supplied Color Hunt palette and map the four colors to Agentro semantic design tokens
+- [x] Apply the new palette across global CSS, Hero, buttons, cards, states, navigation, webinar, instructor, program, and admin surfaces
+- [x] Add unique copy-link buttons to the top-right of each curriculum section with hash URLs and copied feedback
+- [x] Verify contrast, responsive placement, clipboard fallback, tests, and save the palette/link checkpoint
