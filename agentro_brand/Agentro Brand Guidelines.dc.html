@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agentro — 브랜드 및 디자인 가이드라인</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&amp;family=Gowun+Dodum&amp;family=Hahmlet:wght@100..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&amp;family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&amp;family=Nanum+Gothic&amp;family=Noto+Sans+KR:wght@100..900&amp;display=swap" rel="stylesheet" />
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:74px}
+  body{margin:0;background:#fbfaf7;color:#181319;font-family:"IBM Plex Sans KR",sans-serif;word-break:keep-all;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4,h5{margin:0;line-height:1.15;text-wrap:balance}
+  p{margin:0;text-wrap:pretty}
+  ul,ol{margin:0;padding:0;list-style:none}
+  a{color:#007DCC;text-decoration:none}
+  a:hover{color:#B2054C}
+  button{font:inherit;color:inherit;cursor:pointer}
+  :focus-visible{outline:2px solid #FFB900;outline-offset:3px}
+  ::selection{background:#FFB900;color:#181319}
+  @keyframes agSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+  @keyframes agBreathe{0%,100%{opacity:.25}50%{opacity:1}}
+  @keyframes agPulse{0%{transform:scale(.92);opacity:.7}70%,100%{transform:scale(1.18);opacity:0}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+
+<div style="min-height:100vh">
+
+<nav style="position:sticky;top:0;z-index:50;background:rgba(251,250,247,.9);backdrop-filter:blur(18px);border-bottom:1px solid #d7e3ea;box-shadow:0 8px 28px rgba(178,5,76,.05)">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px;height:74px;display:flex;align-items:center;gap:24px">
+    <a href="#top" style="display:flex;align-items:center;gap:10px;font-family:'Gowun Batang',serif;font-size:20px;letter-spacing:-.045em;color:#181319">
+      <img src="agentro-mark.svg" alt="" style="display:block;width:24px;height:24px" aria-hidden="true" />
+      Agentro
+    </a>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770;border-left:1px solid #d7e3ea;padding-left:16px">BRAND&nbsp;&amp;&nbsp;DESIGN<br />GUIDELINES v1.0</span>
+    <div style="flex:1"></div>
+    <div style="display:flex;gap:18px;font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#3d4a54">
+      <a href="#brand" style="color:#3d4a54">01 Brand</a>
+      <a href="#logo" style="color:#3d4a54">02 Logo</a>
+      <a href="#color" style="color:#3d4a54">03 Color</a>
+      <a href="#type" style="color:#3d4a54">04 Type</a>
+      <a href="#voice" style="color:#3d4a54">05 Voice</a>
+      <a href="#icon" style="color:#3d4a54">06 Icon</a>
+      <a href="#layout" style="color:#3d4a54">07 Layout</a>
+      <a href="#ui" style="color:#3d4a54">08 UI</a>
+      <a href="#donts" style="color:#3d4a54">09 Don'ts</a>
+      <a href="#tokens" style="color:#3d4a54">10 Tokens</a>
+      <a href="#a11y" style="color:#3d4a54">11 A11y</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" style="position:relative;overflow:hidden;background:linear-gradient(145deg,#180916,#3d0b2b);color:#fff2f7">
+  <div style="position:absolute;right:-10vw;top:-16vw;width:46vw;height:46vw;border-radius:50%;border:1px solid rgba(0,125,204,.22);box-shadow:0 0 0 44px rgba(255,185,0,.02),0 0 0 88px rgba(255,185,0,.015);pointer-events:none"></div>
+  <div style="position:relative;z-index:1;width:100%;max-width:1240px;margin:0 auto;padding:104px 28px 88px;display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:end">
+    <div>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;color:#FFB900">AGENTRO / BRAND SYSTEM</span>
+      <h1 style="font-family:'Gowun Batang',serif;font-weight:400;font-size:clamp(44px,5.6vw,78px);letter-spacing:-.05em;line-height:1.06;margin:22px 0 0">브랜드 및<br />디자인 가이드라인</h1>
+      <p style="font-family:'IBM Plex Sans',sans-serif;font-size:15px;letter-spacing:.01em;color:#d7a9bf;margin:18px 0 0">Brand &amp; Design Guidelines — v1.0</p>
+      <p style="font-family:'Noto Sans KR',sans-serif;font-size:17px;line-height:1.85;color:#f1d9e3;margin:28px 0 0;max-width:46ch">AI Agent · AX 전환 교육과 컨설팅을 운영하는 Agentro의 말과 시각을 하나의 기준으로 정리한 문서입니다. 모든 값은 제품 코드에서 그대로 가져왔습니다.</p>
+    </div>
+    <div style="border:1px solid #54203c;border-radius:18px;background:rgba(61,11,43,.6);backdrop-filter:blur(16px);padding:24px;box-shadow:24px 30px 80px rgba(17,7,18,.4),inset 0 1px 0 rgba(255,255,255,.09)">
+      <div style="display:grid;gap:0">
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #432039"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#d7a9bf">VERSION</span><span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff9e8">1.0</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #432039"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#d7a9bf">ISSUED</span><span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff9e8">2026.08</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid #432039"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#d7a9bf">SOURCE</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#FFB900">agentro-web@main</span></div>
+        <div style="display:flex;justify-content:space-between;gap:16px;padding:12px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#d7a9bf">SCOPE</span><span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#fff9e8">Web · Admin · Print</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="brand" style="padding:112px 0;border-bottom:1px solid #e2e7eb">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">01 / BRAND</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">브랜드 개요와 미션</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Overview &amp; Mission</p>
+
+    <div style="display:grid;grid-template-columns:1.25fr .75fr;gap:60px;margin-top:56px;align-items:start">
+      <div>
+        <p style="font-family:'Gowun Batang',serif;font-size:clamp(24px,3vw,34px);line-height:1.5;letter-spacing:-.03em;color:#181319">도구 사용법을 가르치는 대신,<br />업무가 다시 움직이는 <em style="font-style:normal;color:#007DCC">구조</em>를 남깁니다.</p>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:14px;line-height:1.7;color:#5b6770;margin:20px 0 0;max-width:56ch">We don't teach tools. We leave behind a structure that keeps the work running — after the class ends.</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:32px 0 0;max-width:58ch">Agentro는 기업의 AI Agent 도입과 AX(AI Transformation) 전환을 교육 프로그램과 컨설팅으로 지원합니다. 결과물은 강의 자료가 아니라, 조직이 계속 쓸 수 있는 업무 구조와 운영 기준입니다.</p>
+      </div>
+      <div style="display:grid;gap:14px">
+        <div style="background:#fff;border:1px solid #d7e3ea;border-radius:14px;padding:22px;box-shadow:0 10px 32px rgba(178,5,76,.05)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">POSITION 01</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:18px;margin:10px 0 0">구조가 먼저</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.75;color:#3d4a54;margin:8px 0 0">도구 목록이 아니라 반복되는 업무를 먼저 분해합니다.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #d7e3ea;border-radius:14px;padding:22px;box-shadow:0 10px 32px rgba(178,5,76,.05)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">POSITION 02</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:18px;margin:10px 0 0">판단은 사람이</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.75;color:#3d4a54;margin:8px 0 0">AI가 사람을 대체하는 서사를 쓰지 않습니다. 사람의 기준을 구조화합니다.</p>
+        </div>
+        <div style="background:#fff;border:1px solid #d7e3ea;border-radius:14px;padding:22px;box-shadow:0 10px 32px rgba(178,5,76,.05)">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">POSITION 03</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:18px;margin:10px 0 0">남는 결과물</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.75;color:#3d4a54;margin:8px 0 0">체크리스트·운영 기준·작동하는 시스템으로 끝냅니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:24px;letter-spacing:-.04em;margin:84px 0 0">브랜드 서사 구조 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:14px;color:#8996a1">Narrative spine</span></h3>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.8;color:#3d4a54;margin:12px 0 0;max-width:64ch">모든 커뮤니케이션은 네 단계 순서를 따릅니다. 홈 Hero의 노드, 커리큘럼 앵커, 제안서 목차가 모두 같은 순서를 씁니다. 이 네 개는 늘어나거나 줄어들지 않습니다.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px">
+      <div style="border-top:2px solid #B2054C;padding:22px 24px 22px 0;position:relative">
+        <span style="position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:#FFB900"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#007DCC">CONTEXT</span>
+        <h4 style="font-family:Hahmlet,serif;font-weight:600;font-size:20px;margin:14px 0 8px">업무 맥락</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.7;color:#5b6770;padding-right:18px">반복되는 업무와 필요한 맥락을 Agent가 이해할 기준으로 정리합니다.</p>
+      </div>
+      <div style="border-top:2px solid #B2054C;padding:22px 24px 22px 0;position:relative">
+        <span style="position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:#FFB900"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#007DCC">DECISION</span>
+        <h4 style="font-family:Hahmlet,serif;font-weight:600;font-size:20px;margin:14px 0 8px">판단 기준</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.7;color:#5b6770;padding-right:18px">품질과 예외 상황을 판단할 수 있도록 사람의 기준을 구조화합니다.</p>
+      </div>
+      <div style="border-top:2px solid #B2054C;padding:22px 24px 22px 0;position:relative">
+        <span style="position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:#FFB900"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#007DCC">TOOLS</span>
+        <h4 style="font-family:Hahmlet,serif;font-weight:600;font-size:20px;margin:14px 0 8px">도구 연결</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.7;color:#5b6770;padding-right:18px">데이터와 도구를 연결해 실제 업무 흐름 안에서 작동하게 만듭니다.</p>
+      </div>
+      <div style="border-top:2px solid #B2054C;padding:22px 0;position:relative">
+        <span style="position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:#FFB900"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;color:#007DCC">OUTPUT</span>
+        <h4 style="font-family:Hahmlet,serif;font-weight:600;font-size:20px;margin:14px 0 8px">운영 결과</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.7;color:#5b6770">검수와 피드백을 거쳐 다시 쓸 수 있는 결과물과 체크리스트를 남깁니다.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:24px;letter-spacing:-.04em;margin:84px 0 0">브랜드 성격 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:14px;color:#8996a1">Personality → how it shows up</span></h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:22px">
+        <h5 style="font-family:'Gowun Dodum',sans-serif;font-size:16px;color:#181319">신뢰감 있는 엔터프라이즈</h5>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#3d4a54;margin:10px 0 0">정렬된 그리드, 1px 라인, 절제된 그림자. 장식보다 근거.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:22px">
+        <h5 style="font-family:'Gowun Dodum',sans-serif;font-size:16px;color:#181319">직설적 · 기술적</h5>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#3d4a54;margin:10px 0 0">모노스페이스 라벨, 대문자 코드, 숫자는 tabular-nums.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:22px">
+        <h5 style="font-family:'Gowun Dodum',sans-serif;font-size:16px;color:#181319">따뜻하고 사람 중심</h5>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#3d4a54;margin:10px 0 0">아이보리 배경, 명조 계열 디스플레이, 1.8 행간의 여유.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:22px">
+        <h5 style="font-family:'Gowun Dodum',sans-serif;font-size:16px;color:#181319">단정하고 미니멀</h5>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#3d4a54;margin:10px 0 0">한 화면에 강조색 하나. 채우기보다 비우기.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="logo" style="padding:112px 0;border-bottom:1px solid #e2e7eb;background:#fff">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">02 / LOGO</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">로고 사용 규칙</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Logo usage</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:24px 0 0;max-width:62ch">로고는 <strong style="font-weight:600">Orbit 심볼</strong>과 <strong style="font-weight:600">Gowun Batang 워드마크</strong>의 조합입니다. 열린 궤도는 닫힌 자동화가 아니라 사람이 들어올 수 있는 구조를, 궤도의 틈에 놓인 옐로 노드는 그 자리의 판단을 뜻합니다. §06의 Orbit 일러스트와 같은 형태 언어이므로 로고와 배경 그래픽이 하나의 시스템으로 읽힙니다.</p>
+
+    <div style="display:grid;grid-template-columns:1.4fr .6fr;gap:22px;margin-top:48px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:0;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:center;gap:23px;padding:72px 28px;background:#fff">
+          <svg viewBox="0 0 64 64" style="display:block;width:46px;height:46px;flex-shrink:0" aria-hidden="true"><path d="M39.52 11.32 A 22 22 0 1 0 52.68 24.48" fill="none" stroke="#007DCC" stroke-width="5" stroke-linecap="round"></path><rect x="24.5" y="24.5" width="15" height="15" rx="5.5" fill="#007DCC"></rect><circle cx="47.6" cy="16.4" r="7.5" fill="#FFB900"></circle></svg>
+          <span style="font-family:'Gowun Batang',serif;font-size:43px;letter-spacing:-.045em;color:#181319;line-height:1">Agentro</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid #e2e7eb;padding:16px 22px;background:#fff">
+          <span style="font-family:'Gowun Dodum',sans-serif;font-size:14px">기본형 · Primary lockup</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5b6770">agentro-wordmark.svg · 192×56</span>
+        </div>
+      </div>
+      <div style="display:grid;gap:22px">
+        <div style="border:1px solid #d7e3ea;border-radius:14px;overflow:hidden">
+          <div style="display:grid;place-items:center;padding:34px;background:#fff">
+            <img src="favicon.svg" alt="Agentro 심볼 마크" style="display:block;width:72px;height:72px" />
+          </div>
+          <div style="border-top:1px solid #e2e7eb;padding:13px 18px;background:#fff"><span style="font-family:'Gowun Dodum',sans-serif;font-size:13px">심볼 1:1 · App icon</span></div>
+        </div>
+        <div style="border:1px solid #54203c;border-radius:14px;overflow:hidden">
+          <div style="display:flex;align-items:center;justify-content:center;gap:14px;padding:34px;background:#110712">
+            <svg viewBox="0 0 64 64" style="display:block;width:28px;height:28px;flex-shrink:0" aria-hidden="true"><path d="M39.52 11.32 A 22 22 0 1 0 52.68 24.48" fill="none" stroke="#fff2f7" stroke-width="5" stroke-linecap="round"></path><rect x="24.5" y="24.5" width="15" height="15" rx="5.5" fill="#fff2f7"></rect><circle cx="47.6" cy="16.4" r="7.5" fill="#FFB900"></circle></svg>
+            <span style="font-family:'Gowun Batang',serif;font-size:27px;letter-spacing:-.045em;color:#fff2f7;line-height:1">Agentro</span>
+          </div>
+          <div style="border-top:1px solid #432039;padding:13px 18px;background:#180916"><span style="font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#f0c9d8">다크 배경 · invert</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">CONSTRUCTION</span>
+        <div style="margin:22px 0 0;display:grid;place-items:center;padding:18px 0">
+          <div style="position:relative;width:132px;height:132px">
+            <div style="position:absolute;left:20.6px;top:20.6px;width:90.8px;height:90.8px;border:1px dashed rgba(178,5,76,.35);border-radius:50%"></div>
+            <div style="position:absolute;left:16.5px;top:16.5px;right:16.5px;bottom:16.5px;border:1px dashed rgba(24,19,25,.18)"></div>
+            <img src="agentro-mark.svg" alt="Orbit 심볼 작도" style="position:relative;display:block;width:132px;height:132px" />
+          </div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#3d4a54;margin:18px 0 0">64 그리드 · 사방 여백 8. 궤도는 <strong style="font-weight:600">r&nbsp;22 · stroke&nbsp;5</strong>의 310° 호, 판단 노드는 <strong style="font-weight:600">r&nbsp;7.5</strong>를 궤도상 45°에, 코어는 <strong style="font-weight:600">15×15 rx&nbsp;5.5</strong>를 정중앙에 둡니다. 궤도의 틈은 노드가 놓일 만큼만 벌립니다.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">CLEAR SPACE</span>
+        <div style="margin:22px 0 0;display:grid;place-items:center;padding:8px 0">
+          <div style="position:relative;padding:22px;border:1px dashed #D10056;border-radius:10px">
+            <div style="position:absolute;inset:0;background:rgba(209,0,86,.05);border-radius:10px"></div>
+            <div style="position:relative;display:flex;align-items:center;gap:16px">
+              <svg viewBox="0 0 64 64" style="display:block;width:32px;height:32px;flex-shrink:0" aria-hidden="true"><path d="M39.52 11.32 A 22 22 0 1 0 52.68 24.48" fill="none" stroke="#007DCC" stroke-width="5" stroke-linecap="round"></path><rect x="24.5" y="24.5" width="15" height="15" rx="5.5" fill="#007DCC"></rect><circle cx="47.6" cy="16.4" r="7.5" fill="#FFB900"></circle></svg>
+              <span style="font-family:'Gowun Batang',serif;font-size:30px;letter-spacing:-.045em;color:#181319;line-height:1">Agentro</span>
+            </div>
+          </div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#3d4a54;margin:22px 0 0">로고 사방으로 <strong style="font-weight:600">마크 높이의 50%</strong> 이상을 비웁니다. 28px 마크 기준 14px. 이 영역에는 텍스트·라인·이미지가 들어오지 않습니다.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">MINIMUM SIZE</span>
+        <div style="margin:26px 0 0;display:flex;align-items:flex-end;gap:22px;flex-wrap:wrap">
+          <div style="display:grid;gap:8px"><div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 64 64" style="display:block;width:23px;height:23px;flex-shrink:0" aria-hidden="true"><path d="M39.52 11.32 A 22 22 0 1 0 52.68 24.48" fill="none" stroke="#007DCC" stroke-width="5" stroke-linecap="round"></path><rect x="24.5" y="24.5" width="15" height="15" rx="5.5" fill="#007DCC"></rect><circle cx="47.6" cy="16.4" r="7.5" fill="#FFB900"></circle></svg><span style="font-family:'Gowun Batang',serif;font-size:22px;letter-spacing:-.045em;color:#181319;line-height:1">Agentro</span></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">122px — web</span></div>
+          <div style="display:grid;gap:8px"><img src="agentro-mark.svg" alt="최소 크기 심볼" style="display:block;width:18px;height:18px" /><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">18px — mark</span></div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#3d4a54;margin:22px 0 0">워드마크 최소 폭 122px(모바일 112px), 심볼 최소 18px, 인쇄 최소 20mm. 그 이하에서는 심볼만 사용합니다.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:22px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#007DCC">DO</span>
+        <ul style="display:grid;gap:12px;margin:16px 0 0">
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">헤더에서는 좌측 정렬, 74–76px 바 안 수직 중앙.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">다크 배경에서는 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">agentro-wordmark-knockout.svg</span>를 씁니다 — 반전 필터가 아니라 전용 파일.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">항상 SVG를 씁니다. PNG는 인쇄·외부 제출용 예비 자산입니다.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">단색 배경 또는 night 계열 라디얼 위에만 올립니다.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#D10056">DON'T</span>
+        <ul style="display:grid;gap:12px;margin:16px 0 0">
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">노드 색을 파랑·마젠타로 바꾸지 않습니다. 판단 노드는 항상 #FFB900.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">워드마크를 다른 서체로 다시 타이핑하지 않습니다.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">회전·기울임·외곽선·드롭섀도우·그라디언트 채우기 금지.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">궤도를 닫힌 원으로 메우거나 노드를 궤도 밖으로 빼지 않습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="color" style="padding:112px 0;border-bottom:1px solid #e2e7eb" onClick="{{ onSwatchClick }}">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">03 / COLOR</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">컬러 시스템</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Color system — click any swatch to copy</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:24px 0 0;max-width:62ch">브랜드 코어는 네 색입니다. 파랑은 행동과 링크, 옐로는 초점과 활성 상태, 마젠타는 표현적 상호작용, 마룬은 깊은 브랜드 표면과 다크 상태 강조를 맡습니다. 뉴트럴은 색이 아니라 <strong style="font-weight:600">읽히게 만드는 바닥</strong>입니다.</p>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em;margin:56px 0 0">브랜드 코어 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Brand core</span></h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px">
+      <div data-hex="#007DCC" style="border:1px solid #d7e3ea;border-radius:14px;overflow:hidden;background:#fff;cursor:pointer;transition:transform .22s cubic-bezier(.23,1,.32,1),box-shadow .22s" style-hover="transform:translateY(-5px);box-shadow:0 18px 42px rgba(178,5,76,.14)">
+        <div style="height:132px;background:#007DCC;display:flex;align-items:flex-end;padding:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#fff;opacity:.85;display:{{ ratioDisplay }}">AA 4.37:1 vs #fff</span></div>
+        <div style="padding:18px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:16px">Agentro Blue</h4>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#B2054C;margin:6px 0 0">#007DCC</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;line-height:1.7;color:#5b6770;margin:12px 0 0">주요 액션 · 링크 · 트랙 코드 · 관리자 활성 탭</p>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8996a1;margin:10px 0 0">--primary / --accent-blue</p>
+        </div>
+      </div>
+      <div data-hex="#FFB900" style="border:1px solid #d7e3ea;border-radius:14px;overflow:hidden;background:#fff;cursor:pointer;transition:transform .22s cubic-bezier(.23,1,.32,1),box-shadow .22s" style-hover="transform:translateY(-5px);box-shadow:0 18px 42px rgba(178,5,76,.14)">
+        <div style="height:132px;background:#FFB900;display:flex;align-items:flex-end;padding:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#181319;opacity:.7;display:{{ ratioDisplay }}">10.6:1 vs #181319</span></div>
+        <div style="padding:18px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:16px">Signal Yellow</h4>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#B2054C;margin:6px 0 0">#FFB900</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;line-height:1.7;color:#5b6770;margin:12px 0 0">포커스 링 · 활성 표시 · 다크 배경 강조 · 라이브 상태</p>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8996a1;margin:10px 0 0">--ring / --accent-yellow / --mint</p>
+        </div>
+      </div>
+      <div data-hex="#D10056" style="border:1px solid #d7e3ea;border-radius:14px;overflow:hidden;background:#fff;cursor:pointer;transition:transform .22s cubic-bezier(.23,1,.32,1),box-shadow .22s" style-hover="transform:translateY(-5px);box-shadow:0 18px 42px rgba(178,5,76,.14)">
+        <div style="height:132px;background:#D10056;display:flex;align-items:flex-end;padding:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#fff;opacity:.85;display:{{ ratioDisplay }}">AA 5.46:1 vs #fff</span></div>
+        <div style="padding:18px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:16px">Expressive Magenta</h4>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#B2054C;margin:6px 0 0">#D10056</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;line-height:1.7;color:#5b6770;margin:12px 0 0">알림 · 표현적 상호작용 · 프로세스 구분선 · 토스트</p>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8996a1;margin:10px 0 0">--accent-pink</p>
+        </div>
+      </div>
+      <div data-hex="#B2054C" style="border:1px solid #d7e3ea;border-radius:14px;overflow:hidden;background:#fff;cursor:pointer;transition:transform .22s cubic-bezier(.23,1,.32,1),box-shadow .22s" style-hover="transform:translateY(-5px);box-shadow:0 18px 42px rgba(178,5,76,.14)">
+        <div style="height:132px;background:#B2054C;display:flex;align-items:flex-end;padding:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#fff;opacity:.85;display:{{ ratioDisplay }}">AAA 7.01:1 vs #fff</span></div>
+        <div style="padding:18px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:16px">Deep Maroon</h4>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#B2054C;margin:6px 0 0">#B2054C</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;line-height:1.7;color:#5b6770;margin:12px 0 0">깊은 브랜드 표면 · 칩 텍스트 · 그림자 색조의 원천</p>
+          <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#8996a1;margin:10px 0 0">--accent-maroon / --shadow-brand</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px">
+      <div>
+        <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em">라이트 표면 &amp; 잉크 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Light surfaces &amp; ink</span></h3>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px">
+          <div data-hex="#fbfaf7" style="border:1px solid #d7e3ea;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden"><div style="height:56px;background:#fbfaf7;border-bottom:1px solid #e2e7eb"></div><div style="padding:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#fbfaf7</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#5b6770;margin:4px 0 0">배경 · --background</p></div></div>
+          <div data-hex="#ffffff" style="border:1px solid #d7e3ea;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden"><div style="height:56px;background:#ffffff;border-bottom:1px solid #e2e7eb"></div><div style="padding:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#ffffff</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#5b6770;margin:4px 0 0">카드 · --card</p></div></div>
+          <div data-hex="#edf5fb" style="border:1px solid #d7e3ea;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden"><div style="height:56px;background:#edf5fb;border-bottom:1px solid #e2e7eb"></div><div style="padding:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#edf5fb</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#5b6770;margin:4px 0 0">소프트 · --soft (칩·아바타)</p></div></div>
+          <div data-hex="#edf6fc" style="border:1px solid #d7e3ea;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden"><div style="height:56px;background:#edf6fc;border-bottom:1px solid #e2e7eb"></div><div style="padding:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#edf6fc</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#5b6770;margin:4px 0 0">뮤트 · --muted</p></div></div>
+          <div data-hex="#181319" style="border:1px solid #d7e3ea;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden"><div style="height:56px;background:#181319"></div><div style="padding:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#181319</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#5b6770;margin:4px 0 0">본문 잉크 · --ink</p></div></div>
+          <div data-hex="#3d4a54" style="border:1px solid #d7e3ea;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden"><div style="height:56px;background:#3d4a54"></div><div style="padding:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#3d4a54</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#5b6770;margin:4px 0 0">보조 잉크 · --ink-2</p></div></div>
+          <div data-hex="#5b6770" style="border:1px solid #d7e3ea;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden"><div style="height:56px;background:#5b6770"></div><div style="padding:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#5b6770</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#5b6770;margin:4px 0 0">캡션 · --muted-foreground</p></div></div>
+          <div data-hex="#d7e3ea" style="border:1px solid #d7e3ea;border-radius:10px;background:#fff;cursor:pointer;overflow:hidden"><div style="height:56px;background:#d7e3ea"></div><div style="padding:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#d7e3ea</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#5b6770;margin:4px 0 0">테두리 · --border / --line #e2e7eb</p></div></div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em">다크 표면 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Dark surfaces — a palette, not an inversion</span></h3>
+        <div style="border:1px solid #54203c;border-radius:14px;background:linear-gradient(145deg,#110712,#3d0b2b);padding:22px;margin-top:18px">
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+            <div data-hex="#110712" style="border:1px solid #432039;border-radius:10px;cursor:pointer;overflow:hidden"><div style="height:52px;background:#110712"></div><div style="padding:11px;background:rgba(255,255,255,.03)"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#fff9e8">#110712</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#d7a9bf;margin:4px 0 0">다크 배경 · --night</p></div></div>
+            <div data-hex="#3d0b2b" style="border:1px solid #432039;border-radius:10px;cursor:pointer;overflow:hidden"><div style="height:52px;background:#3d0b2b"></div><div style="padding:11px;background:rgba(255,255,255,.03)"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#fff9e8">#3d0b2b</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#d7a9bf;margin:4px 0 0">플럼 · --night-2</p></div></div>
+            <div data-hex="#24101d" style="border:1px solid #432039;border-radius:10px;cursor:pointer;overflow:hidden"><div style="height:52px;background:#24101d"></div><div style="padding:11px;background:rgba(255,255,255,.03)"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#fff9e8">#24101d</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#d7a9bf;margin:4px 0 0">다크 카드 · --card</p></div></div>
+            <div data-hex="#54203c" style="border:1px solid #432039;border-radius:10px;cursor:pointer;overflow:hidden"><div style="height:52px;background:#54203c"></div><div style="padding:11px;background:rgba(255,255,255,.03)"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#fff9e8">#54203c</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#d7a9bf;margin:4px 0 0">다크 테두리 · --border</p></div></div>
+            <div data-hex="#fff2f7" style="border:1px solid #432039;border-radius:10px;cursor:pointer;overflow:hidden"><div style="height:52px;background:#fff2f7"></div><div style="padding:11px;background:rgba(255,255,255,.03)"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#fff9e8">#fff2f7</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#d7a9bf;margin:4px 0 0">다크 본문 · --foreground</p></div></div>
+            <div data-hex="#d7a9bf" style="border:1px solid #432039;border-radius:10px;cursor:pointer;overflow:hidden"><div style="height:52px;background:#d7a9bf"></div><div style="padding:11px;background:rgba(255,255,255,.03)"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#fff9e8">#d7a9bf</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#d7a9bf;margin:4px 0 0">다크 캡션 · --muted-foreground</p></div></div>
+          </div>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#f1d9e3;margin:20px 0 0">다크 표면은 라이트의 반전이 아닙니다. 뉴트럴 그레이 대신 <strong style="font-weight:600">플럼 계열</strong>을 씁니다. 다크에서 텍스트 강조는 옐로 <span style="font-family:'IBM Plex Mono',monospace;color:#ffcf4d">#ffcf4d</span>로 한 단계 밝혀 씁니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">USAGE RATIO</span>
+        <div style="display:flex;height:34px;border-radius:8px;overflow:hidden;margin:18px 0 0;border:1px solid #e2e7eb">
+          <div style="flex:80;background:#fbfaf7"></div><div style="flex:12;background:#007DCC"></div><div style="flex:5;background:#FFB900"></div><div style="flex:3;background:#B2054C"></div>
+        </div>
+        <div style="display:flex;gap:18px;flex-wrap:wrap;margin:14px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#5b6770">
+          <span>NEUTRAL 80%</span><span style="color:#007DCC">BLUE 12%</span><span style="color:#B2054C">YELLOW 5%</span><span style="color:#B2054C">MAGENTA/MAROON 3%</span>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.8;color:#3d4a54;margin:20px 0 0">한 화면에 강조색은 하나입니다. 파랑이 주인공인 화면에서 옐로는 포커스와 활성 표시에만, 마젠타는 알림에만 등장합니다.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#D10056">HARD RULES</span>
+        <ul style="display:grid;gap:12px;margin:16px 0 0">
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px"><strong style="font-weight:600">옐로는 텍스트로 쓰지 않습니다.</strong> 흰 배경 대비 1.73:1 — 다크 표면 위에서만 텍스트로 허용.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px"><strong style="font-weight:600">파랑은 18px 이하 본문에 쓰지 않습니다.</strong> 4.37:1 — 링크·버튼·라벨까지만.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">본문 강조가 필요하면 마룬 #B2054C(7.01:1)를 씁니다.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">그라디언트는 night → night-2 라디얼/145° 두 종류만. 브랜드 코어 색끼리 섞지 않습니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="type" style="padding:112px 0;border-bottom:1px solid #e2e7eb;background:#fff">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">04 / TYPOGRAPHY</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">타이포그래피</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Typography — eight roles, one hierarchy</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:24px 0 0;max-width:62ch">여덟 개의 서체를 쓰지만 규칙은 하나입니다. <strong style="font-weight:600">역할이 서체를 결정합니다.</strong> 취향으로 고르지 않습니다. 명조 계열(Gowun Batang·Hahmlet)은 브랜드가 말하는 자리, 고딕 계열(IBM Plex·Noto)은 제품이 일하는 자리, 모노스페이스는 기계가 말하는 자리입니다.</p>
+
+    <div style="display:grid;gap:0;margin-top:52px;border-top:1px solid #e2e7eb">
+      <div style="display:grid;grid-template-columns:200px 1fr 220px;gap:32px;padding:30px 0;border-bottom:1px solid #e2e7eb;align-items:baseline">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">DISPLAY</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px;margin:7px 0 0">Gowun Batang</h4>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1;margin:4px 0 0">고운바탕 · 400</p>
+        </div>
+        <p style="font-family:'Gowun Batang',serif;font-size:44px;letter-spacing:-.05em;line-height:1.15;color:#181319">업무가 다시 움직이는 구조</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">Hero 헤드라인, 워드마크, 브랜드가 직접 말하는 문장. <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">40–78px / -.05em / 1.06–1.15</span></p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr 220px;gap:32px;padding:30px 0;border-bottom:1px solid #e2e7eb;align-items:baseline">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">HEADING</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px;margin:7px 0 0">Hahmlet</h4>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1;margin:4px 0 0">함렛 · 500 · 600</p>
+        </div>
+        <p style="font-family:Hahmlet,serif;font-weight:600;font-size:36px;letter-spacing:-.055em;line-height:1.12;color:#181319">커리큘럼과 운영 기준</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">섹션 제목, 카드 제목, 커리큘럼 트랙명. <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">20–46px / -.04~-.055em / 1.08–1.2</span></p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr 220px;gap:32px;padding:30px 0;border-bottom:1px solid #e2e7eb;align-items:baseline">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#007DCC">BODY</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px;margin:7px 0 0">IBM Plex Sans KR</h4>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1;margin:4px 0 0">기본 본문 · 300–600</p>
+        </div>
+        <p style="font-family:'IBM Plex Sans KR',sans-serif;font-size:17px;line-height:1.8;color:#181319">제품 UI의 기본 본문입니다. 라벨, 설명, 표 안의 텍스트가 이 서체로 놓입니다.</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">기본값. 지정이 없으면 이것을 씁니다. <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">14–17px / 1.7–1.8</span></p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr 220px;gap:32px;padding:30px 0;border-bottom:1px solid #e2e7eb;align-items:baseline">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#007DCC">READING</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px;margin:7px 0 0">Noto Sans KR</h4>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1;margin:4px 0 0">긴 한글 본문 · 350–500</p>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:17px;line-height:1.85;color:#181319">세 줄 이상 이어지는 한글 설명문은 이 서체를 씁니다. 자소 균형이 안정적이어서 긴 문단에서 눈이 덜 피로합니다.</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">3줄 이상 문단, 커리큘럼 상세, 제안서. <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">15–17px / 1.85 / keep-all</span></p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr 220px;gap:32px;padding:30px 0;border-bottom:1px solid #e2e7eb;align-items:baseline">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#007DCC">UI / NUMERALS</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px;margin:7px 0 0">IBM Plex Sans</h4>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1;margin:4px 0 0">라틴 · 숫자 · 400–600</p>
+        </div>
+        <p style="font-family:'IBM Plex Sans',sans-serif;font-size:24px;line-height:1.4;color:#181319;font-variant-numeric:tabular-nums">Day 2 · 14:00–18:00 · 24 seats · 92% NPS</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">버튼, 내비게이션, 날짜·시간·수치. 숫자는 항상 <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">tabular-nums</span>.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr 220px;gap:32px;padding:30px 0;border-bottom:1px solid #e2e7eb;align-items:baseline">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">LABEL</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px;margin:7px 0 0">Gowun Dodum</h4>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1;margin:4px 0 0">고운돋움 · 400</p>
+        </div>
+        <p style="font-family:'Gowun Dodum',sans-serif;font-size:20px;line-height:1.5;color:#181319">사람이 붙인 이름표 · 카드 소제목</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">소제목, 캡션, 사람 이름·직함. 따뜻함을 담당합니다. <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">13–20px</span></p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr 220px;gap:32px;padding:30px 0;border-bottom:1px solid #e2e7eb;align-items:baseline">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">LEGAL</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px;margin:7px 0 0">Nanum Gothic</h4>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1;margin:4px 0 0">나눔고딕 · 400</p>
+        </div>
+        <p style="font-family:'Nanum Gothic',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54">사업자등록번호 · 개인정보처리방침 · 이용약관 · 환불 규정</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">푸터, 약관, 고지문. 이 영역 밖에서는 쓰지 않습니다. <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">12–14px</span></p>
+      </div>
+      <div style="display:grid;grid-template-columns:200px 1fr 220px;gap:32px;padding:30px 0;border-bottom:1px solid #e2e7eb;align-items:baseline">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">MONO</span>
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px;margin:7px 0 0">IBM Plex Mono</h4>
+          <p style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1;margin:4px 0 0">400 · 500</p>
+        </div>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:18px;line-height:1.5;color:#181319">TRACK-02 / AX-FOUNDATION</p>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">아이브로우 라벨, 코드, 트랙 코드, 메타데이터. <span style="font-family:'IBM Plex Mono',monospace;font-size:11px">10–13px / .12–.16em</span></p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:44px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#007DCC">KOREAN TYPESETTING</span>
+        <ul style="display:grid;gap:12px;margin:16px 0 0">
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">word-break: keep-all</span> — 전역 적용. 한글 단어가 음절 단위로 끊기지 않게.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">text-wrap: pretty</span> — 본문. 제목은 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">balance</span>.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">한글 본문 행간은 1.8 이상. 라틴 기준(1.5)을 그대로 쓰지 않습니다.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">한글에는 자간을 조이지 않습니다. 음수 자간은 제목(-.04em 이상)에만.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:12px">한글 볼드는 600까지. 700 이상은 화면에서 뭉갭니다.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">SCALE · 1.25 ratio</span>
+        <div style="display:grid;gap:0;margin:16px 0 0">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1">78</span><span style="font-family:'Gowun Batang',serif;font-size:30px;letter-spacing:-.05em">Hero</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1">46</span><span style="font-family:Hahmlet,serif;font-weight:600;font-size:24px;letter-spacing:-.05em">Section</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1">24</span><span style="font-family:Hahmlet,serif;font-weight:600;font-size:19px;letter-spacing:-.04em">Sub</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1">18</span><span style="font-family:'Gowun Dodum',sans-serif;font-size:17px">Card title</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1">16</span><span style="font-family:'Noto Sans KR',sans-serif;font-size:16px">본문 Body</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1">14</span><span style="font-family:'IBM Plex Sans KR',sans-serif;font-size:14px">보조 Secondary</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1">12</span><span style="font-family:'Gowun Dodum',sans-serif;font-size:12px">캡션 Caption</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1">10</span><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em">EYEBROW</span></div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.7;color:#5b6770;margin:16px 0 0">본문 최소 14px, 인쇄 물 12pt. 10px는 모노스페이스 라벨 전용입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="voice" style="padding:112px 0;border-bottom:1px solid #e2e7eb">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">05 / VOICE</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">보이스 &amp; 톤</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Voice &amp; tone — copy principles</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:24px 0 0;max-width:62ch">Agentro의 문장은 <strong style="font-weight:600">기술을 팔지 않고 결과를 설명합니다.</strong> AI가 대단하다는 말을 하지 않고, 업무가 어떻게 달라지는지를 말합니다. 과장이 없으면 신뢰가 남습니다.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px">
+      <div style="border-top:2px solid #007DCC;padding:20px 22px 20px 0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">PRINCIPLE 01</span>
+        <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:17px;margin:10px 0 8px">결과부터</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;padding-right:16px">무엇이 달라지는지를 첫 문장에 씁니다. 기술 이름은 그 다음입니다.</p>
+      </div>
+      <div style="border-top:2px solid #007DCC;padding:20px 22px 20px 0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">PRINCIPLE 02</span>
+        <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:17px;margin:10px 0 8px">숫자는 근거로만</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;padding-right:16px">출처를 댈 수 있는 숫자만 씁니다. 장식용 지표는 쓰지 않습니다.</p>
+      </div>
+      <div style="border-top:2px solid #007DCC;padding:20px 22px 20px 0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">PRINCIPLE 03</span>
+        <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:17px;margin:10px 0 8px">사람을 주어로</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;padding-right:16px">“AI가 처리합니다”가 아니라 “담당자가 검수만 하면 됩니다”.</p>
+      </div>
+      <div style="border-top:2px solid #007DCC;padding:20px 0">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#B2054C">PRINCIPLE 04</span>
+        <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:17px;margin:10px 0 8px">짧게, 단정하게</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770">한 문장에 한 정보. 문장이 길어지면 자릅니다.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em;margin:72px 0 0">쓰는 말 / 쓰지 않는 말 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Say this, not that</span></h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px">
+      <div style="border:1px solid #007DCC;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#007DCC">SAY THIS</span>
+        <div style="display:grid;gap:0;margin:14px 0 0">
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;color:#181319;border-top:1px solid #e2e7eb;padding:14px 0">3일 과정을 마치면 팀의 반복 업무 하나가 실제로 자동화되어 있습니다.</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;color:#181319;border-top:1px solid #e2e7eb;padding:14px 0">Agent가 초안을 만들고, 담당자가 판단 기준으로 검수합니다.</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;color:#181319;border-top:1px solid #e2e7eb;padding:14px 0">먼저 업무를 분해합니다. 도구는 그 다음에 고릅니다.</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;color:#181319;border-top:1px solid #e2e7eb;padding:14px 0">이 과정으로 해결되지 않는 문제는 미리 말씀드립니다.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#D10056">NOT THAT</span>
+        <div style="display:grid;gap:0;margin:14px 0 0">
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;color:#8996a1;border-top:1px solid #e2e7eb;padding:14px 0;text-decoration:line-through;text-decoration-color:#f0b9cf">AI 혁명의 물결에 올라타 조직을 완전히 재창조하세요!</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;color:#8996a1;border-top:1px solid #e2e7eb;padding:14px 0;text-decoration:line-through;text-decoration-color:#f0b9cf">AI가 사람의 업무를 100% 대체합니다.</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;color:#8996a1;border-top:1px solid #e2e7eb;padding:14px 0;text-decoration:line-through;text-decoration-color:#f0b9cf">최신 LLM·RAG·MCP·Agentic Workflow 총망라 커리큘럼</p>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.75;color:#8996a1;border-top:1px solid #e2e7eb;padding:14px 0;text-decoration:line-through;text-decoration-color:#f0b9cf">업무 효율 300% 향상 보장!</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:24px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">FORM · 문체</span>
+        <ul style="display:grid;gap:11px;margin:14px 0 0">
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">고객 대면은 <strong style="font-weight:600">–습니다</strong>체. –해요체는 쓰지 않습니다.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">UI 라벨은 명사형. “저장” 〉 “저장하기”.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">느낌표·이모지는 쓰지 않습니다.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:24px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">TERMS · 표기</span>
+        <ul style="display:grid;gap:11px;margin:14px 0 0">
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px"><strong style="font-weight:600">Agent · AX</strong> 영문 그대로. “에이전트/에이엑스” 병기 안 함.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">첫 등장에만 풀네임 — AX(AI Transformation).</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">브랜드명은 <strong style="font-weight:600">Agentro</strong>. “에이전트로”·“AGENTRO” 금지.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:24px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">LENGTH · 분량</span>
+        <ul style="display:grid;gap:11px;margin:14px 0 0">
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">Hero 헤드라인 <strong style="font-weight:600">2줄 이내 · 30자 이내</strong>.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">카드 설명 <strong style="font-weight:600">3줄 이내</strong>. 넘치면 상세로 옮깁니다.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">본문 한 줄 <strong style="font-weight:600">40–60자</strong>(max-width 56–62ch).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="icon" style="padding:112px 0;border-bottom:1px solid #e2e7eb;background:#fff">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">06 / ICON</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">아이콘 · 일러스트</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Iconography &amp; illustration</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:24px 0 0;max-width:62ch">아이콘은 <strong style="font-weight:600">Lucide</strong> 한 세트만 씁니다. 여러 세트를 섞으면 선 두께와 모서리 처리가 달라져 화면이 흐트러집니다. 일러스트는 그리지 않고, <strong style="font-weight:600">기하 도형과 노드·라인</strong>으로 구조를 표현합니다.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">SPEC</span>
+        <div style="display:flex;gap:24px;align-items:flex-end;margin:22px 0 0;flex-wrap:wrap">
+          <div style="display:grid;gap:9px;justify-items:center">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#181319" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">16</span>
+          </div>
+          <div style="display:grid;gap:9px;justify-items:center">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#181319" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">20</span>
+          </div>
+          <div style="display:grid;gap:9px;justify-items:center">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#181319" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">24</span>
+          </div>
+          <div style="display:grid;gap:9px;justify-items:center">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#181319" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">32</span>
+          </div>
+        </div>
+        <ul style="display:grid;gap:11px;margin:26px 0 0">
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">세트: <strong style="font-weight:600">Lucide</strong> · 24×24 뷰박스 · stroke만, fill 없음</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">선 두께 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">1.75</span> 고정. 크기가 커져도 두께는 그대로.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">끝처리 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">round</span> — 마크의 둥근 모서리와 같은 언어.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">색은 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">currentColor</span>. 아이콘에 독자 색을 주지 않습니다.</li>
+          <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">텍스트 옆에서는 광학 정렬 — 폰트 크기보다 2px 작게.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">CONTAINER · 아이콘 담기</span>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin:22px 0 0">
+          <div style="display:grid;gap:9px;justify-items:center">
+            <div style="width:44px;height:44px;border-radius:12px;background:#edf5fb;display:grid;place-items:center">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#007DCC" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v4"></path><path d="m16.2 7.8 2.9-2.9"></path><path d="M18 12h4"></path><circle cx="12" cy="12" r="4"></circle></svg>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">soft</span>
+          </div>
+          <div style="display:grid;gap:9px;justify-items:center">
+            <div style="width:44px;height:44px;border-radius:12px;background:#007DCC;display:grid;place-items:center">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">solid</span>
+          </div>
+          <div style="display:grid;gap:9px;justify-items:center">
+            <div style="width:44px;height:44px;border-radius:12px;border:1px solid #d7e3ea;background:#fff;display:grid;place-items:center">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#181319" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><path d="M9 12h6"></path></svg>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">outline</span>
+          </div>
+          <div style="display:grid;gap:9px;justify-items:center">
+            <div style="width:44px;height:44px;border-radius:12px;background:#180916;display:grid;place-items:center">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FFB900" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"></path><path d="M3 12h18"></path></svg>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">night</span>
+          </div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.75;color:#3d4a54;margin:24px 0 0">컨테이너는 <strong style="font-weight:600">44×44 · radius 12</strong>가 기본입니다. 44px는 최소 터치 타겟과 같은 값이라 모바일에서 그대로 씁니다. 컨테이너 안 아이콘은 20px.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em;margin:64px 0 0">일러스트 언어 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Node &amp; orbit — geometry, not drawing</span></h3>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:15px;line-height:1.8;color:#3d4a54;margin:12px 0 0;max-width:62ch">사람이나 사물을 그리지 않습니다. Agent 구조는 <strong style="font-weight:600">노드(점)</strong>와 <strong style="font-weight:600">궤도(원)</strong>, <strong style="font-weight:600">연결선</strong> 세 요소로만 표현합니다. 배경은 night 계열, 발광은 옐로 한 색입니다.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:24px">
+      <div style="border:1px solid #54203c;border-radius:14px;overflow:hidden">
+        <div style="position:relative;height:200px;background:radial-gradient(circle at 50% 50%,#3d0b2b,#110712)">
+          <div style="position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px 0 0 -75px;border-radius:50%;border:1px solid rgba(0,125,204,.4)"></div>
+          <div style="position:absolute;left:50%;top:50%;width:92px;height:92px;margin:-46px 0 0 -46px;border-radius:50%;border:1px dashed rgba(255,185,0,.34)"></div>
+          <div style="position:absolute;left:50%;top:50%;width:150px;height:150px;transform:translate(-50%,-50%);animation:agSpin 14s linear infinite">
+            <div style="position:absolute;left:50%;top:-4px;width:9px;height:9px;margin-left:-4.5px;border-radius:50%;background:#FFB900;box-shadow:0 0 14px rgba(255,185,0,.8)"></div>
+          </div>
+          <div style="position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:7px;background:#007DCC"></div>
+          <div style="position:absolute;left:50%;top:50%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:7px;border:1px solid rgba(0,125,204,.7);animation:agPulse 2.8s ease-out infinite"></div>
+        </div>
+        <div style="border-top:1px solid #432039;padding:14px 18px;background:#180916">
+          <span style="font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#fff2f7">Orbit — Agent 작동</span>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;line-height:1.65;color:#d7a9bf;margin:5px 0 0">중심 코어 + 회전 노드. Hero·표지에 사용.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #54203c;border-radius:14px;overflow:hidden">
+        <div style="position:relative;height:200px;background:linear-gradient(145deg,#180916,#3d0b2b);display:grid;place-items:center">
+          <div style="display:flex;align-items:center;gap:0">
+            <div style="width:14px;height:14px;border-radius:5px;background:#007DCC"></div>
+            <div style="width:38px;height:1px;background:linear-gradient(90deg,#007DCC,#FFB900)"></div>
+            <div style="width:14px;height:14px;border-radius:5px;background:#FFB900;animation:agBreathe 2.4s ease-in-out infinite"></div>
+            <div style="width:38px;height:1px;background:linear-gradient(90deg,#FFB900,#D10056)"></div>
+            <div style="width:14px;height:14px;border-radius:5px;background:#D10056"></div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #432039;padding:14px 18px;background:#180916">
+          <span style="font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#fff2f7">Chain — 업무 흐름</span>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;line-height:1.65;color:#d7a9bf;margin:5px 0 0">노드 3–5개. 단계 설명에 사용.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #54203c;border-radius:14px;overflow:hidden">
+        <div style="position:relative;height:200px;background:#110712;display:grid;place-items:center">
+          <div style="display:grid;grid-template-columns:repeat(4,10px);gap:14px">
+            <div style="width:10px;height:10px;border-radius:50%;background:#007DCC"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,185,0,.3)"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#FFB900"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(0,125,204,.3)"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,185,0,.3)"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#D10056"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(0,125,204,.3)"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#007DCC"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,185,0,.3)"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#FFB900"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(0,125,204,.3)"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(209,0,86,.35)"></div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #432039;padding:14px 18px;background:#180916">
+          <span style="font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#fff2f7">Field — 조직 단위</span>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;line-height:1.65;color:#d7a9bf;margin:5px 0 0">균일 그리드 + 부분 활성. 배경 패턴에 사용.</p>
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:22px 26px;margin-top:22px">
+      <p style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.8;color:#3d4a54"><strong style="font-weight:600">사진</strong>은 실제 교육 현장과 사람만 씁니다. 스톡 AI 이미지(로봇 손, 뇌 회로, 파란 홀로그램)는 쓰지 않습니다. 사진에는 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">radius 14</span>와 night 계열 오버레이 12–20%를 적용해 톤을 맞춥니다.</p>
+    </div>
+  </div>
+</section>
+
+<section id="layout" style="padding:112px 0;border-bottom:1px solid #e2e7eb">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">07 / LAYOUT</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">레이아웃 · 그리드 · 스페이싱</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Layout, grid &amp; spacing</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">CONTAINER &amp; GRID</span>
+        <div style="position:relative;margin:20px 0 0;border:1px solid #e2e7eb;border-radius:8px;overflow:hidden;background:#fbfaf7">
+          <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:8px;padding:16px 20px;height:120px">
+            <div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div><div style="background:rgba(0,125,204,.14);border-radius:3px"></div>
+          </div>
+        </div>
+        <div style="display:grid;gap:0;margin:18px 0 0">
+          <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:#3d4a54">콘텐츠 최대 폭</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#181319">1240px</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:#3d4a54">좌우 거터</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#181319">28px · 모바일 20px</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:#3d4a54">컬럼</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#181319">12 · gap 22px</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:#3d4a54">섹션 상하 여백</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#181319">112px · 모바일 72px</span></div>
+          <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid #e2e7eb;padding:11px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:#3d4a54">고정 헤더 높이</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#181319">74px</span></div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.75;color:#5b6770;margin:16px 0 0">비대칭 2열은 <strong style="font-weight:600">1.25 / 0.75</strong> 또는 <strong style="font-weight:600">1.4 / 0.6</strong>만 씁니다. 정확한 반반은 비교 대조에만.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">SPACING · 4px base</span>
+        <div style="display:grid;gap:10px;margin:20px 0 0">
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">4</span><div style="height:12px;width:4px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">아이콘–텍스트 미세 간격</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">8</span><div style="height:12px;width:8px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">버튼 내부 아이콘 gap</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">12</span><div style="height:12px;width:12px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">리스트 항목 간격</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">18</span><div style="height:12px;width:18px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">카드 그리드 gap(조밀)</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">22</span><div style="height:12px;width:22px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">기본 카드 gap</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">26</span><div style="height:12px;width:26px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">카드 내부 패딩</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">48</span><div style="height:12px;width:48px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">제목–콘텐츠 간격</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">72</span><div style="height:12px;width:72px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">서브섹션 분리</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#8996a1;width:34px;text-align:right">112</span><div style="height:12px;width:112px;background:#007DCC;border-radius:2px"></div><span style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770">섹션 상하 여백</span></div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.75;color:#5b6770;margin:18px 0 0">모든 간격은 4의 배수입니다. 목록에 없는 값(15, 30, 45)은 쓰지 않습니다.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">RADIUS</span>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 0">
+          <div style="display:grid;gap:8px;justify-items:center"><div style="width:52px;height:52px;background:#edf5fb;border:1px solid #d7e3ea;border-radius:6px"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">6 chip</span></div>
+          <div style="display:grid;gap:8px;justify-items:center"><div style="width:52px;height:52px;background:#edf5fb;border:1px solid #d7e3ea;border-radius:10px"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">10 btn</span></div>
+          <div style="display:grid;gap:8px;justify-items:center"><div style="width:52px;height:52px;background:#edf5fb;border:1px solid #d7e3ea;border-radius:14px"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">14 card</span></div>
+          <div style="display:grid;gap:8px;justify-items:center"><div style="width:52px;height:52px;background:#edf5fb;border:1px solid #d7e3ea;border-radius:18px"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">18 panel</span></div>
+          <div style="display:grid;gap:8px;justify-items:center"><div style="width:52px;height:52px;background:#edf5fb;border:1px solid #d7e3ea;border-radius:24px"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">24 frame</span></div>
+          <div style="display:grid;gap:8px;justify-items:center"><div style="width:52px;height:52px;background:#edf5fb;border:1px solid #d7e3ea;border-radius:999px"></div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#5b6770">pill</span></div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.7;color:#5b6770;margin:18px 0 0">중첩 시 안쪽 반경 = 바깥 반경 − 패딩. 원형은 아바타·상태점에만.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">ELEVATION · 마룬 색조</span>
+        <div style="display:grid;gap:14px;margin:22px 0 0">
+          <div style="height:38px;border-radius:10px;background:#fff;border:1px solid #e2e7eb;display:flex;align-items:center;padding:0 14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#5b6770">0 · 라인만</span></div>
+          <div style="height:38px;border-radius:10px;background:#fff;border:1px solid #d7e3ea;box-shadow:0 10px 32px rgba(178,5,76,.05);display:flex;align-items:center;padding:0 14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#5b6770">1 · 카드</span></div>
+          <div style="height:38px;border-radius:10px;background:#fff;border:1px solid #d7e3ea;box-shadow:0 18px 42px rgba(178,5,76,.14);display:flex;align-items:center;padding:0 14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#5b6770">2 · 호버</span></div>
+          <div style="height:38px;border-radius:10px;background:#fff;border:1px solid #d7e3ea;box-shadow:0 24px 60px rgba(178,5,76,.18);display:flex;align-items:center;padding:0 14px"><span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#5b6770">3 · 모달</span></div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.7;color:#5b6770;margin:18px 0 0">그림자는 회색이 아니라 <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#B2054C">rgba(178,5,76,·)</span>입니다. 브랜드 색조가 표면에 남습니다.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">BREAKPOINTS · MOTION</span>
+        <div style="display:grid;gap:0;margin:16px 0 0">
+          <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#3d4a54">Mobile</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">&lt; 768 · 1열</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#3d4a54">Tablet</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">768 · 2열</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#3d4a54">Desktop</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">1024 · 3–4열</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#3d4a54">Wide</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">1280 · 1240 고정</span></div>
+        </div>
+        <div style="display:grid;gap:0;margin:20px 0 0">
+          <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#3d4a54">Easing</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#B2054C">cubic-bezier(.23,1,.32,1)</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#3d4a54">Duration</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">150 / 220 / 320ms</span></div>
+          <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#3d4a54">Hover lift</span><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">translateY(−5px)</span></div>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.7;color:#5b6770;margin:16px 0 0">모션은 상태 변화를 알릴 때만. 등장 애니메이션은 한 화면에 한 번.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ui" style="padding:112px 0;border-bottom:1px solid #e2e7eb;background:#fff">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">08 / COMPONENTS</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">UI 컴포넌트 라이브러리</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Component library — live specimens</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:24px 0 0;max-width:62ch">아래 요소는 이미지가 아니라 실제로 동작하는 명세입니다. 마우스를 올려 상태를 확인하고, 값은 그대로 가져다 쓰십시오.</p>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em;margin:52px 0 0">버튼 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Buttons · height 46 / radius 10</span></h3>
+    <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:30px;margin-top:20px">
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+        <button type="button" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;border-radius:10px;background:#007DCC;color:#fff;border:1px solid #007DCC;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14px;transition:all .22s cubic-bezier(.23,1,.32,1)" style-hover="background:#0069ad;border-color:#0069ad;transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,125,204,.28)">
+          프로그램 문의
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+        <button type="button" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 22px;border-radius:10px;background:#fff;color:#181319;border:1px solid #d7e3ea;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14px;transition:all .22s cubic-bezier(.23,1,.32,1)" style-hover="border-color:#007DCC;color:#007DCC;background:#edf5fb">커리큘럼 보기</button>
+        <button type="button" style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 16px;border-radius:10px;background:transparent;color:#007DCC;border:1px solid transparent;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14px;transition:all .22s cubic-bezier(.23,1,.32,1)" style-hover="background:#edf5fb">자료 내려받기</button>
+        <button type="button" style="display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 16px;border-radius:10px;background:#B2054C;color:#fff;border:1px solid #B2054C;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:13px;transition:all .22s cubic-bezier(.23,1,.32,1)" style-hover="background:#8f0440;border-color:#8f0440">Small</button>
+        <button type="button" disabled="disabled" style="display:inline-flex;align-items:center;height:46px;padding:0 22px;border-radius:10px;background:#edf6fc;color:#a9b6c0;border:1px solid #e2e7eb;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14px;cursor:not-allowed">Disabled</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px;border-top:1px solid #e2e7eb;padding-top:20px">
+        <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8996a1">PRIMARY</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;line-height:1.7;color:#3d4a54;margin:6px 0 0">화면당 1개. 가장 중요한 다음 행동.</p></div>
+        <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8996a1">SECONDARY</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;line-height:1.7;color:#3d4a54;margin:6px 0 0">병렬 선택지. primary와 나란히.</p></div>
+        <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8996a1">GHOST</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;line-height:1.7;color:#3d4a54;margin:6px 0 0">보조 행동. 테두리 없음.</p></div>
+        <div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8996a1">TOUCH</span><p style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;line-height:1.7;color:#3d4a54;margin:6px 0 0">모바일 최소 높이 44px 유지.</p></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em;margin:56px 0 0">칩 · 배지 · 상태 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Chips, badges &amp; status</span></h3>
+    <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:30px;margin-top:20px">
+      <div style="display:flex;gap:11px;flex-wrap:wrap;align-items:center">
+        <span style="display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:6px;background:#edf5fb;color:#B2054C;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.04em">TRACK-01</span>
+        <span style="display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:6px;background:#edf5fb;color:#007DCC;font-family:'IBM Plex Sans KR',sans-serif;font-weight:500;font-size:12.5px">3일 과정</span>
+        <span style="display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:6px;border:1px solid #d7e3ea;background:#fff;color:#3d4a54;font-family:'IBM Plex Sans KR',sans-serif;font-size:12.5px">오프라인</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 12px;border-radius:999px;background:#fff;border:1px solid #d7e3ea;font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#3d4a54"><span style="width:7px;height:7px;border-radius:50%;background:#007DCC"></span>모집중</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 12px;border-radius:999px;background:#fff;border:1px solid #d7e3ea;font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#3d4a54"><span style="width:7px;height:7px;border-radius:50%;background:#FFB900;animation:agBreathe 2s ease-in-out infinite"></span>진행중</span>
+        <span style="display:inline-flex;align-items:center;gap:7px;height:28px;padding:0 12px;border-radius:999px;background:#fff;border:1px solid #d7e3ea;font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#8996a1"><span style="width:7px;height:7px;border-radius:50%;background:#a9b6c0"></span>마감</span>
+        <span style="display:inline-flex;align-items:center;height:28px;padding:0 11px;border-radius:6px;background:#D10056;color:#fff;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.04em">NEW</span>
+      </div>
+      <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:22px 0 0;border-top:1px solid #e2e7eb;padding-top:18px">칩 높이 28px, radius 6, 텍스트 12.5px. 코드·식별자는 모노스페이스에 마룬, 사람이 읽는 라벨은 고딕에 파랑. 상태 표시는 pill + 7px 점, <strong style="font-weight:600">색만으로 상태를 구분하지 않고 반드시 텍스트를 함께</strong> 둡니다.</p>
+    </div>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em;margin:56px 0 0">카드 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Cards — 3 patterns</span></h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:20px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;padding:26px;box-shadow:0 10px 32px rgba(178,5,76,.05);transition:transform .22s cubic-bezier(.23,1,.32,1),box-shadow .22s" style-hover="transform:translateY(-5px);box-shadow:0 18px 42px rgba(178,5,76,.14)">
+        <div style="width:44px;height:44px;border-radius:12px;background:#edf5fb;display:grid;place-items:center">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#007DCC" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><path d="M8 12h8"></path><path d="M12 8v8"></path></svg>
+        </div>
+        <h4 style="font-family:Hahmlet,serif;font-weight:600;font-size:20px;letter-spacing:-.04em;margin:18px 0 0">업무 분해 워크숍</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.8;color:#3d4a54;margin:10px 0 0">팀의 반복 업무를 단계로 나누고, Agent가 맡을 구간과 사람이 판단할 구간을 정합니다.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 0">
+          <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:6px;background:#edf5fb;color:#007DCC;font-family:'IBM Plex Sans KR',sans-serif;font-size:12px">1일</span>
+          <span style="display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:6px;background:#edf5fb;color:#007DCC;font-family:'IBM Plex Sans KR',sans-serif;font-size:12px">실무자</span>
+        </div>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8996a1;margin:20px 0 0;border-top:1px solid #e2e7eb;padding-top:14px">STANDARD · 아이콘 + 제목 + 설명 + 칩</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;overflow:hidden;box-shadow:0 10px 32px rgba(178,5,76,.05);transition:transform .22s cubic-bezier(.23,1,.32,1),box-shadow .22s" style-hover="transform:translateY(-5px);box-shadow:0 18px 42px rgba(178,5,76,.14)">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;border-bottom:1px solid #e2e7eb;background:#fbfaf7">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#B2054C">TRACK-02</span>
+          <span style="display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:#3d4a54"><span style="width:7px;height:7px;border-radius:50%;background:#007DCC"></span>모집중</span>
+        </div>
+        <div style="padding:22px">
+          <h4 style="font-family:Hahmlet,serif;font-weight:600;font-size:20px;letter-spacing:-.04em">AX 파운데이션</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.8;color:#3d4a54;margin:10px 0 0">조직 전체가 같은 언어로 AI를 말할 수 있도록 기준을 맞추는 3일 과정입니다.</p>
+          <div style="display:grid;gap:0;margin:18px 0 0">
+            <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#5b6770">기간</span><span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">3일 · 18시간</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;border-top:1px solid #e2e7eb;padding:10px 0"><span style="font-family:'Noto Sans KR',sans-serif;font-size:13px;color:#5b6770">정원</span><span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">24명</span></div>
+          </div>
+        </div>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#8996a1;margin:0;padding:14px 22px;border-top:1px solid #e2e7eb">DATA · 헤더 + 정의 리스트</p>
+      </div>
+      <div style="border:1px solid #54203c;border-radius:14px;background:linear-gradient(145deg,#180916,#3d0b2b);padding:26px;box-shadow:0 18px 42px rgba(17,7,18,.24);transition:transform .22s cubic-bezier(.23,1,.32,1)" style-hover="transform:translateY(-5px)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FFB900">CONSULTING</span>
+        <h4 style="font-family:'Gowun Batang',serif;font-weight:400;font-size:26px;letter-spacing:-.045em;line-height:1.25;color:#fff2f7;margin:14px 0 0">조직 맞춤 AX 진단</h4>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.8;color:#f1d9e3;margin:12px 0 0">현재 업무를 진단하고 6개월 전환 로드맵을 함께 만듭니다.</p>
+        <button type="button" style="display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:10px;background:transparent;color:#fff9e8;border:1px solid rgba(255,185,0,.7);font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:13px;margin-top:22px;transition:all .22s cubic-bezier(.23,1,.32,1)" style-hover="background:#FFB900;color:#181319;border-color:#FFB900">상담 요청
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#d7a9bf;margin:22px 0 0;border-top:1px solid #432039;padding-top:14px">FEATURE · night 표면 + 옐로 강조</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em;margin:56px 0 0">폼 요소 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Form controls · height 46 / radius 10</span></h3>
+    <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:30px;margin-top:20px">
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+        <div>
+          <label style="display:block;font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#181319;margin-bottom:8px">담당자 이름 <span style="color:#D10056">*</span></label>
+          <input type="text" value="김민서" style="width:100%;height:46px;padding:0 14px;border-radius:10px;border:1px solid #d7e3ea;background:#fff;font-family:'IBM Plex Sans KR',sans-serif;font-size:14px;color:#181319" />
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#5b6770;margin:7px 0 0">기본 상태 · border #d7e3ea</p>
+        </div>
+        <div>
+          <label style="display:block;font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#181319;margin-bottom:8px">회사 이메일</label>
+          <input type="text" value="ms.kim@company.co.kr" style="width:100%;height:46px;padding:0 14px;border-radius:10px;border:1px solid #007DCC;background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#181319;box-shadow:0 0 0 3px rgba(255,185,0,.32)" />
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#007DCC;margin:7px 0 0">포커스 · 파란 테두리 + 옐로 링 3px</p>
+        </div>
+        <div>
+          <label style="display:block;font-family:'Gowun Dodum',sans-serif;font-size:13px;color:#181319;margin-bottom:8px">참여 인원</label>
+          <input type="text" value="24" style="width:100%;height:46px;padding:0 14px;border-radius:10px;border:1px solid #D10056;background:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:14px;color:#181319" />
+          <p style="display:flex;align-items:center;gap:6px;font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#D10056;margin:7px 0 0">
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+            정원은 20명 이하로 입력해 주세요
+          </p>
+        </div>
+      </div>
+      <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:24px 0 0;border-top:1px solid #e2e7eb;padding-top:18px">오류는 <strong style="font-weight:600">색 + 아이콘 + 문장</strong> 세 가지로 함께 알립니다. 라벨은 항상 필드 위에 두고, placeholder를 라벨 대신 쓰지 않습니다.</p>
+    </div>
+
+    <h3 style="font-family:Hahmlet,serif;font-weight:600;font-size:22px;letter-spacing:-.04em;margin:56px 0 0">탐색 · 표 <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:400;font-size:13px;color:#8996a1">Tabs &amp; table</span></h3>
+    <div style="display:grid;grid-template-columns:.8fr 1.2fr;gap:22px;margin-top:20px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <div style="display:flex;gap:4px;border-bottom:1px solid #d7e3ea">
+          <span style="padding:12px 16px;font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;font-size:13.5px;color:#007DCC;border-bottom:2px solid #007DCC;margin-bottom:-1px">전체 과정</span>
+          <span style="padding:12px 16px;font-family:'IBM Plex Sans KR',sans-serif;font-size:13.5px;color:#5b6770">컨설팅</span>
+          <span style="padding:12px 16px;font-family:'IBM Plex Sans KR',sans-serif;font-size:13.5px;color:#5b6770">사례</span>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px">
+          <span style="display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:#181319;color:#fff;font-family:'IBM Plex Sans KR',sans-serif;font-size:13px">전체</span>
+          <span style="display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #d7e3ea;color:#3d4a54;font-family:'IBM Plex Sans KR',sans-serif;font-size:13px">임원</span>
+          <span style="display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #d7e3ea;color:#3d4a54;font-family:'IBM Plex Sans KR',sans-serif;font-size:13px">실무자</span>
+          <span style="display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;background:#fff;border:1px solid #d7e3ea;color:#3d4a54;font-family:'IBM Plex Sans KR',sans-serif;font-size:13px">개발</span>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:22px 0 0;border-top:1px solid #e2e7eb;padding-top:16px">탭은 밑줄 2px 파랑, 필터는 pill. 선택된 필터만 잉크 배경입니다.</p>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1.6fr 1fr .8fr .8fr;gap:16px;padding:14px 22px;background:#fbfaf7;border-bottom:1px solid #d7e3ea">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#5b6770">PROGRAM</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#5b6770">TARGET</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#5b6770;text-align:right">DAYS</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:#5b6770;text-align:right">SEATS</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr .8fr .8fr;gap:16px;padding:15px 22px;border-bottom:1px solid #e2e7eb;align-items:center">
+          <span style="font-family:'IBM Plex Sans KR',sans-serif;font-size:14px;color:#181319">AX 파운데이션</span>
+          <span style="font-family:'IBM Plex Sans KR',sans-serif;font-size:13.5px;color:#5b6770">전 직군</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:#181319;text-align:right;font-variant-numeric:tabular-nums">3</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:#181319;text-align:right;font-variant-numeric:tabular-nums">24</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr .8fr .8fr;gap:16px;padding:15px 22px;border-bottom:1px solid #e2e7eb;align-items:center;background:#fbfaf7">
+          <span style="font-family:'IBM Plex Sans KR',sans-serif;font-size:14px;color:#181319">지식 하네스 실습</span>
+          <span style="font-family:'IBM Plex Sans KR',sans-serif;font-size:13.5px;color:#5b6770">실무자</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:#181319;text-align:right;font-variant-numeric:tabular-nums">2</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:#181319;text-align:right;font-variant-numeric:tabular-nums">16</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1.6fr 1fr .8fr .8fr;gap:16px;padding:15px 22px;align-items:center">
+          <span style="font-family:'IBM Plex Sans KR',sans-serif;font-size:14px;color:#181319">임원 브리핑</span>
+          <span style="font-family:'IBM Plex Sans KR',sans-serif;font-size:13.5px;color:#5b6770">경영진</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:#181319;text-align:right;font-variant-numeric:tabular-nums">1</span>
+          <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:#181319;text-align:right;font-variant-numeric:tabular-nums">12</span>
+        </div>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;line-height:1.7;color:#5b6770;margin:0;padding:14px 22px;border-top:1px solid #d7e3ea;background:#fbfaf7">숫자는 우측 정렬 + tabular-nums, 텍스트는 좌측 정렬. 짝수 행에 #fbfaf7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="donts" style="padding:112px 0;border-bottom:1px solid #e2e7eb">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">09 / DON'TS</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">금지 사용 예시</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Don'ts — with the correction beside it</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:24px 0 0;max-width:62ch">가장 자주 나오는 실수 여섯 가지입니다. 왼쪽이 틀린 예, 오른쪽이 고친 예입니다.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <div style="padding:22px;background:#fff;border-right:1px solid #e2e7eb;min-height:132px;display:grid;align-content:center;gap:10px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#D10056">NO</span>
+            <span style="font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;font-size:15px;color:#FFB900">옐로 텍스트</span>
+          </div>
+          <div style="padding:22px;background:#fbfaf7;min-height:132px;display:grid;align-content:center;gap:10px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#007DCC">YES</span>
+            <span style="font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;font-size:15px;color:#B2054C">마룬 텍스트</span>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2e7eb;padding:18px 22px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px">밝은 배경 위 옐로 텍스트</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:7px 0 0">대비 1.73:1로 읽을 수 없습니다. 강조는 마룬(7.01:1)으로.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <div style="padding:22px;border-right:1px solid #e2e7eb;min-height:132px;display:grid;align-content:center;gap:10px;background:linear-gradient(120deg,#007DCC,#D10056,#FFB900)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#fff">NO</span>
+            <span style="font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;font-size:15px;color:#fff">3색 그라디언트</span>
+          </div>
+          <div style="padding:22px;min-height:132px;display:grid;align-content:center;gap:10px;background:linear-gradient(145deg,#180916,#3d0b2b)">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#FFB900">YES</span>
+            <span style="font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;font-size:15px;color:#fff2f7">night 그라디언트</span>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2e7eb;padding:18px 22px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px">브랜드 색끼리 섞은 그라디언트</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:7px 0 0">허용되는 그라디언트는 night → night-2 두 종류뿐입니다.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <div style="padding:22px;background:#fff;border-right:1px solid #e2e7eb;min-height:132px;display:grid;align-content:center;gap:10px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#D10056">NO</span>
+            <span style="font-family:Georgia,serif;font-size:15px;color:#181319">Times로 다시 타이핑</span>
+          </div>
+          <div style="padding:22px;background:#fbfaf7;min-height:132px;display:grid;align-content:center;gap:10px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#007DCC">YES</span>
+            <div style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 64 64" style="display:block;width:22px;height:22px;flex-shrink:0" aria-hidden="true"><path d="M39.52 11.32 A 22 22 0 1 0 52.68 24.48" fill="none" stroke="#007DCC" stroke-width="5" stroke-linecap="round"></path><rect x="24.5" y="24.5" width="15" height="15" rx="5.5" fill="#007DCC"></rect><circle cx="47.6" cy="16.4" r="7.5" fill="#FFB900"></circle></svg><span style="font-family:'Gowun Batang',serif;font-size:21px;letter-spacing:-.045em;color:#181319;line-height:1">Agentro</span></div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2e7eb;padding:18px 22px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px">워드마크 재타이핑</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:7px 0 0">로고는 항상 제공된 SVG 파일을 씁니다.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <div style="padding:22px;background:#fff;border-right:1px solid #e2e7eb;min-height:132px;display:grid;align-content:center;gap:9px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#D10056">NO</span>
+            <div style="display:flex;gap:7px;flex-wrap:wrap">
+              <span style="display:inline-flex;height:30px;align-items:center;padding:0 12px;border-radius:10px;background:#007DCC;color:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600">저장</span>
+              <span style="display:inline-flex;height:30px;align-items:center;padding:0 12px;border-radius:10px;background:#D10056;color:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600">삭제</span>
+              <span style="display:inline-flex;height:30px;align-items:center;padding:0 12px;border-radius:10px;background:#FFB900;color:#181319;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600">공유</span>
+            </div>
+          </div>
+          <div style="padding:22px;background:#fbfaf7;min-height:132px;display:grid;align-content:center;gap:9px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#007DCC">YES</span>
+            <div style="display:flex;gap:7px;flex-wrap:wrap">
+              <span style="display:inline-flex;height:30px;align-items:center;padding:0 12px;border-radius:10px;background:#007DCC;color:#fff;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600">저장</span>
+              <span style="display:inline-flex;height:30px;align-items:center;padding:0 12px;border-radius:10px;background:#fff;border:1px solid #d7e3ea;color:#181319;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600">삭제</span>
+              <span style="display:inline-flex;height:30px;align-items:center;padding:0 12px;border-radius:10px;color:#007DCC;font-family:'IBM Plex Sans',sans-serif;font-size:12px;font-weight:600">공유</span>
+            </div>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2e7eb;padding:18px 22px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px">모든 버튼을 강조색으로</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:7px 0 0">primary는 화면당 하나. 나머지는 위계를 낮춥니다.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <div style="padding:22px;background:#fff;border-right:1px solid #e2e7eb;min-height:132px;display:grid;align-content:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#D10056;margin-bottom:9px">NO</span>
+            <p style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;line-height:1.35;color:#181319">한글 본문에 라틴 기준 행간 1.35를 그대로 적용하면 글줄이 서로 붙어 읽기 어려워집니다</p>
+          </div>
+          <div style="padding:22px;background:#fbfaf7;min-height:132px;display:grid;align-content:center">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#007DCC;margin-bottom:9px">YES</span>
+            <p style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;line-height:1.85;color:#181319">한글 본문은 행간 1.8 이상을 확보해 글줄 사이에 숨 쉴 공간을 둡니다</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2e7eb;padding:18px 22px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px">좁은 한글 행간</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:7px 0 0">한글은 라틴보다 글자 밀도가 높습니다. 1.8 이상.</p>
+        </div>
+      </div>
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fff;overflow:hidden">
+        <div style="display:grid;grid-template-columns:1fr 1fr">
+          <div style="padding:22px;background:#fff;border-right:1px solid #e2e7eb;min-height:132px;display:grid;align-content:center;gap:10px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#D10056">NO</span>
+            <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#181319">AI가 업무를 100% 대체합니다!</span>
+          </div>
+          <div style="padding:22px;background:#fbfaf7;min-height:132px;display:grid;align-content:center;gap:10px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.1em;color:#007DCC">YES</span>
+            <span style="font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:1.7;color:#181319">Agent가 초안을 만들고, 담당자가 검수합니다.</span>
+          </div>
+        </div>
+        <div style="border-top:1px solid #e2e7eb;padding:18px 22px">
+          <h4 style="font-family:'Gowun Dodum',sans-serif;font-size:15px">대체 서사와 느낌표</h4>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:1.75;color:#5b6770;margin:7px 0 0">사람을 주어로 두고, 느낌표는 쓰지 않습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tokens" style="padding:112px 0;border-bottom:1px solid #432039;background:linear-gradient(145deg,#180916,#3d0b2b)">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#FFB900">10 / TOKENS</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0;color:#fff2f7">디자인 토큰</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#d7a9bf;margin:10px 0 0">Design tokens — switch the format in Tweaks</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#f1d9e3;margin:24px 0 0;max-width:62ch">이 문서의 모든 값은 아래 토큰에서 나옵니다. 새 화면을 만들 때 색·서체·간격을 직접 입력하지 말고 토큰을 참조하십시오. 우측 상단 Tweaks에서 CSS · JSON · Tailwind 형식을 바꿀 수 있습니다.</p>
+
+    <div style="border:1px solid #54203c;border-radius:18px;background:#110712;margin-top:40px;overflow:hidden;box-shadow:0 24px 60px rgba(17,7,18,.4)">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;border-bottom:1px solid #432039;background:rgba(255,255,255,.03)">
+        <div style="display:flex;align-items:center;gap:9px">
+          <span style="width:10px;height:10px;border-radius:50%;background:#D10056"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#FFB900"></span>
+          <span style="width:10px;height:10px;border-radius:50%;background:#007DCC"></span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:#d7a9bf;margin-left:10px">{{ tokenFileName }}</span>
+        </div>
+        <button type="button" onClick="{{ copyTokens }}" style="display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 14px;border-radius:8px;background:transparent;border:1px solid rgba(255,185,0,.6);color:#fff9e8;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;transition:all .22s cubic-bezier(.23,1,.32,1)" style-hover="background:#FFB900;color:#181319;border-color:#FFB900">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="3"></rect><path d="M5 15V5a2 2 0 0 1 2-2h8"></path></svg>
+          COPY ALL
+        </button>
+      </div>
+      <pre style="margin:0;padding:26px 24px;overflow-x:auto;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.85;color:#f4e7d4;background:#110712">{{ tokenSnippet }}</pre>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:22px">
+      <div style="border:1px solid #54203c;border-radius:14px;background:rgba(255,255,255,.03);padding:24px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FFB900">NAMING</span>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.8;color:#f1d9e3;margin:12px 0 0">토큰 이름은 <strong style="font-weight:600">역할</strong>로 짓습니다. <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#ffcf4d">--color-primary</span>는 되고 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#f0b9cf">--color-blue-500</span>은 안 됩니다. 색이 바뀌어도 이름은 유효해야 합니다.</p>
+      </div>
+      <div style="border:1px solid #54203c;border-radius:14px;background:rgba(255,255,255,.03);padding:24px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FFB900">THEMING</span>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.8;color:#f1d9e3;margin:12px 0 0">다크는 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#ffcf4d">.dark</span> 스코프에서 같은 이름을 재정의합니다. 컴포넌트는 테마를 알 필요가 없습니다.</p>
+      </div>
+      <div style="border:1px solid #54203c;border-radius:14px;background:rgba(255,255,255,.03);padding:24px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#FFB900">SOURCE OF TRUTH</span>
+        <p style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.8;color:#f1d9e3;margin:12px 0 0">원본은 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#ffcf4d">client/src/index.css</span>입니다. 값이 바뀌면 이 문서가 아니라 그 파일을 먼저 고칩니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="a11y" style="padding:112px 0;border-bottom:1px solid #e2e7eb;background:#fff">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.14em;color:#007DCC">11 / ACCESSIBILITY</span>
+    <h2 style="font-family:Hahmlet,serif;font-weight:600;font-size:clamp(32px,4vw,46px);letter-spacing:-.055em;line-height:1.08;margin:16px 0 0">접근성 기준</h2>
+    <p style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;letter-spacing:.02em;color:#8996a1;margin:10px 0 0">Accessibility — WCAG 2.1 AA baseline</p>
+    <p style="font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.85;color:#3d4a54;margin:24px 0 0;max-width:62ch">기준은 <strong style="font-weight:600">WCAG 2.1 AA</strong>입니다. 기업 고객의 조달 심사에서 요구되는 최소선이며, 우리 문장이 “사람 중심”이라면 화면도 그래야 합니다.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:48px">
+      <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">CONTRAST · 실측값</span>
+        <div style="display:grid;gap:0;margin:16px 0 0">
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;border-top:1px solid #e2e7eb;padding:12px 0">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#181319 / #fbfaf7</span>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">16.2:1</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;border-radius:5px;background:#007DCC;color:#fff">AAA</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;border-top:1px solid #e2e7eb;padding:12px 0">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#3d4a54 / #fbfaf7</span>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">8.9:1</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;border-radius:5px;background:#007DCC;color:#fff">AAA</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;border-top:1px solid #e2e7eb;padding:12px 0">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#5b6770 / #fbfaf7</span>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">5.4:1</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;border-radius:5px;background:#007DCC;color:#fff">AA</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;border-top:1px solid #e2e7eb;padding:12px 0">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#B2054C / #ffffff</span>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">7.0:1</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;border-radius:5px;background:#007DCC;color:#fff">AAA</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;border-top:1px solid #e2e7eb;padding:12px 0">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#007DCC / #ffffff</span>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">4.4:1</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;border-radius:5px;background:#edf5fb;color:#B2054C">AA · 18px+ 또는 UI</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;border-top:1px solid #e2e7eb;padding:12px 0">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#FFB900 / #ffffff</span>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">1.7:1</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;border-radius:5px;background:#D10056;color:#fff">FAIL · 텍스트 금지</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;border-top:1px solid #e2e7eb;padding:12px 0">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#181319">#FFB900 / #110712</span>
+            <span style="font-family:'IBM Plex Sans',sans-serif;font-size:13px;color:#181319;font-variant-numeric:tabular-nums">11.4:1</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;padding:3px 8px;border-radius:5px;background:#007DCC;color:#fff">AAA</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;gap:22px;align-content:start">
+        <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">FOCUS · 옐로의 본업</span>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin:20px 0 0">
+            <button type="button" style="height:44px;padding:0 20px;border-radius:10px;background:#fff;border:1px solid #007DCC;color:#007DCC;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14px;box-shadow:0 0 0 3px rgba(255,185,0,.45)">포커스 상태</button>
+            <button type="button" style="height:44px;padding:0 20px;border-radius:10px;background:#007DCC;border:1px solid #007DCC;color:#fff;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:14px;box-shadow:0 0 0 3px rgba(255,185,0,.6)">포커스 · primary</button>
+          </div>
+          <p style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.8;color:#3d4a54;margin:20px 0 0">포커스 링은 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B2054C">outline 2px #FFB900 / offset 3px</span>. 옐로는 텍스트가 아니라 이 자리에서 일합니다. <strong style="font-weight:600">outline: none은 대체 표시 없이 쓰지 않습니다.</strong></p>
+        </div>
+        <div style="border:1px solid #d7e3ea;border-radius:14px;background:#fbfaf7;padding:26px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;color:#5b6770">CHECKLIST</span>
+          <ul style="display:grid;gap:11px;margin:14px 0 0">
+            <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">터치 타겟 최소 <strong style="font-weight:600">44×44px</strong>, 간격 8px 이상.</li>
+            <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">본문 최소 14px, 200% 확대 시 가로 스크롤 없음.</li>
+            <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">색만으로 정보를 전달하지 않음 — 텍스트·아이콘 병기.</li>
+            <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">모든 이미지에 의미 있는 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">alt</span>. 장식은 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">aria-hidden</span>.</li>
+            <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">제목 레벨 건너뛰지 않음(h1→h2→h3). 페이지당 h1 하나.</li>
+            <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">키보드만으로 전체 흐름 완주 가능. 논리적 탭 순서.</li>
+            <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px">prefers-reduced-motion</span> 존중 — 궤도·펄스 애니메이션 정지.</li>
+            <li style="font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:1.7;color:#3d4a54;border-top:1px solid #e2e7eb;padding-top:11px">한국어 페이지는 <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">lang="ko"</span> 선언.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="padding:64px 0 72px;background:#fbfaf7">
+  <div style="width:100%;max-width:1240px;margin:0 auto;padding:0 28px">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;border-top:1px solid #d7e3ea;padding-top:36px">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <svg viewBox="0 0 64 64" style="display:block;width:25px;height:25px;flex-shrink:0" aria-hidden="true"><path d="M39.52 11.32 A 22 22 0 1 0 52.68 24.48" fill="none" stroke="#007DCC" stroke-width="5" stroke-linecap="round"></path><rect x="24.5" y="24.5" width="15" height="15" rx="5.5" fill="#007DCC"></rect><circle cx="47.6" cy="16.4" r="7.5" fill="#FFB900"></circle></svg>
+          <span style="font-family:'Gowun Batang',serif;font-size:23px;letter-spacing:-.045em;color:#181319;line-height:1">Agentro</span>
+        </div>
+        <p style="font-family:'Nanum Gothic',sans-serif;font-size:13px;line-height:1.8;color:#5b6770;margin:18px 0 0;max-width:56ch">본 가이드라인은 Agentro의 브랜드 자산 사용 기준입니다. 외부 협력사·에이전시는 본 문서의 규칙을 준수해야 하며, 문서에 정의되지 않은 사용은 사전 협의가 필요합니다.</p>
+        <p style="font-family:'Nanum Gothic',sans-serif;font-size:13px;line-height:1.8;color:#8996a1;margin:10px 0 0">This guideline governs the use of Agentro brand assets. Uses not defined here require prior approval.</p>
+      </div>
+      <div style="display:grid;gap:8px;text-align:right">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#5b6770">VERSION 1.0 · 2026.08</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#5b6770">SOURCE agentro-web@main</span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:#8996a1">client/src/index.css</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div style="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:80;padding:11px 18px;border-radius:999px;background:#180916;color:#fff9e8;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;box-shadow:0 12px 30px rgba(17,7,18,.3);pointer-events:none;transition:opacity .2s;opacity:{{ toastOpacity }}">{{ copiedLabel }}</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;tokenFormat&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;CSS Variables&quot;,&quot;JSON&quot;,&quot;Tailwind&quot;],&quot;default&quot;:&quot;CSS Variables&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tokens&quot;},&quot;showAnnotations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Logo&quot;},&quot;contrastMode&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Color&quot;}}">
+class Component extends DCLogic {
+  state = { copied: "" };
+
+  copy = (text) => {
+    if (navigator.clipboard) navigator.clipboard.writeText(text).catch(() => {});
+    this.setState({ copied: text.length > 20 ? "토큰 전체" : text });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ copied: "" }), 1400);
+  };
+
+  onSwatchClick = (e) => {
+    const el = e.target.closest("[data-hex]");
+    if (el) this.copy(el.getAttribute("data-hex"));
+  };
+
+  tokenSnippet() {
+    const t = [
+      ["color-primary", "#007DCC", "primary action, link"],
+      ["color-accent-yellow", "#FFB900", "focus ring, active"],
+      ["color-accent-pink", "#D10056", "alert, expressive"],
+      ["color-accent-maroon", "#B2054C", "deep brand surface"],
+      ["color-background", "#fbfaf7", "page background"],
+      ["color-card", "#ffffff", "card surface"],
+      ["color-soft", "#edf5fb", "chip, avatar"],
+      ["color-ink", "#181319", "body ink"],
+      ["color-ink-2", "#3d4a54", "secondary ink"],
+      ["color-muted-fg", "#5b6770", "caption"],
+      ["color-border", "#d7e3ea", "border"],
+      ["color-line", "#e2e7eb", "divider"],
+      ["color-night", "#110712", "dark background"],
+      ["color-night-2", "#3d0b2b", "dark plum"],
+      ["font-display", "'Gowun Batang', serif", "brand, hero"],
+      ["font-heading", "Hahmlet, serif", "section headings"],
+      ["font-body", "'IBM Plex Sans KR', sans-serif", "default body"],
+      ["font-reading", "'Noto Sans KR', sans-serif", "long-form Korean"],
+      ["font-ui", "'IBM Plex Sans', sans-serif", "controls, numerals"],
+      ["font-label", "'Gowun Dodum', sans-serif", "captions, labels"],
+      ["font-legal", "'Nanum Gothic', sans-serif", "footer, legal"],
+      ["font-mono", "'IBM Plex Mono', monospace", "code, eyebrow"],
+      ["radius-chip", "6px", "chip"],
+      ["radius-control", "10px", "button, input"],
+      ["radius-card", "14px", "card, panel"],
+      ["radius-surface", "18px", "large surface"],
+      ["radius-frame", "24px", "hero frame"],
+      ["container-max", "1240px", "content width"],
+      ["gutter", "28px", "container padding"],
+      ["nav-height", "74px", "sticky header"],
+      ["ease-out", "cubic-bezier(.23,1,.32,1)", "standard easing"],
+      ["shadow-brand", "rgba(178,5,76,.16)", "elevation tint"],
+      ["shadow-night", "rgba(17,7,18,.48)", "dark elevation"],
+    ];
+    const fmt = this.props.tokenFormat ?? "CSS Variables";
+    if (fmt === "JSON") {
+      const obj = {};
+      t.forEach(([k, v]) => (obj[k] = v));
+      return JSON.stringify(obj, null, 2);
+    }
+    if (fmt === "Tailwind") {
+      const color = t.filter((r) => r[0].startsWith("color-")).map(([k, v]) => `        "${k.slice(6)}": "${v}",`).join("\n");
+      const font = t.filter((r) => r[0].startsWith("font-")).map(([k, v]) => `        ${k.slice(5)}: [${v.split(",").map((s) => JSON.stringify(s.trim().replace(/'/g, ""))).join(", ")}],`).join("\n");
+      const radius = t.filter((r) => r[0].startsWith("radius-")).map(([k, v]) => `        ${k.slice(7)}: "${v}",`).join("\n");
+      return `// tailwind.config.js — Agentro\nmodule.exports = {\n  theme: {\n    extend: {\n      colors: {\n${color}\n      },\n      fontFamily: {\n${font}\n      },\n      borderRadius: {\n${radius}\n      },\n    },\n  },\n};`;
+    }
+    return ":root {\n" + t.map(([k, v, c]) => `  --${k}: ${v};`.padEnd(46) + `/* ${c} */`).join("\n") + "\n}";
+  }
+
+  renderVals() {
+    return {
+      onSwatchClick: this.onSwatchClick,
+      ratioDisplay: (this.props.contrastMode ?? true) ? "block" : "none",
+      tokenSnippet: this.tokenSnippet(),
+      tokenFileName: { JSON: "tokens.json", Tailwind: "tailwind.config.js" }[this.props.tokenFormat ?? "CSS Variables"] || "tokens.css",
+      copyTokens: () => this.copy(this.tokenSnippet()),
+      copiedLabel: this.state.copied ? this.state.copied + " 복사됨" : "",
+      toastOpacity: this.state.copied ? 1 : 0,
+    };
+  }
+}
+</script>
+</body>
+</html>

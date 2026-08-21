@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 48" role="img" aria-labelledby="title desc">
+  <title id="title">Agentro</title>
+  <desc id="desc">Agentro editorial wordmark with rounded-square system mark</desc>
+  <rect x="2" y="10" width="28" height="28" rx="8" fill="#007DCC"></rect>
+  <rect x="10" y="18" width="12" height="12" rx="4" fill="#FFB900"></rect>
+  <text x="45" y="35" fill="#15221a" font-family="'Gowun Batang', 'Noto Serif KR', Georgia, serif" font-size="31" font-weight="400" letter-spacing="-1.4">Agentro</text>
+</svg>

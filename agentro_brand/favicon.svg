@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t d">
+  <title id="t">Agentro</title>
+  <desc id="d">Agentro app icon — orbit mark on night surface</desc>
+  <rect width="64" height="64" rx="18" fill="#110712"></rect>
+  <g transform="translate(9.6,9.6) scale(0.7)">
+    <path d="M39.52 11.32 A 22 22 0 1 0 52.68 24.48" fill="none" stroke="#3d97d8" stroke-width="5" stroke-linecap="round"></path>
+    <rect x="24.5" y="24.5" width="15" height="15" rx="5.5" fill="#3d97d8"></rect>
+    <circle cx="47.6" cy="16.4" r="7.5" fill="#FFB900"></circle>
+  </g>
+</svg>
