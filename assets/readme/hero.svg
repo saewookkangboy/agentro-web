@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">Agentro</title>
+  <desc id="desc">AI Agent / AX education site with public pages, webinar registration, and a CMS-backed admin dashboard. Hero shows Context, Decision, Tools, Output orchestration nodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0B1220"/>
+      <stop offset="55%" stop-color="#101A2E"/>
+      <stop offset="100%" stop-color="#1A0F1C"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0.2" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#007DCC" stop-opacity="0.28"/>
+      <stop offset="50%" stop-color="#D10056" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FFB900" stop-opacity="0.10"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="380" rx="26" fill="url(#bg)"/>
+  <rect width="1200" height="380" rx="26" fill="url(#glow)"/>
+
+  <g transform="translate(56 48)">
+    <rect width="36" height="36" rx="10" fill="#007DCC"/>
+    <rect x="10" y="10" width="16" height="16" rx="5" fill="#FFB900"/>
+  </g>
+
+  <text x="108" y="62" fill="#8BA3C7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="600" letter-spacing="2.4">EDUCATION PLATFORM</text>
+  <text x="108" y="112" fill="#F7F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="56" font-weight="700" letter-spacing="-1.6">Agentro</text>
+  <text x="56" y="168" fill="#D7DEEA" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="500">업무를 Agent로 다시 설계하는</text>
+  <text x="56" y="200" fill="#D7DEEA" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="500">공개 교육 사이트와 CMS 대시보드</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#8BA3C7">
+    <text x="56" y="250">React · tRPC · Drizzle · MySQL</text>
+    <text x="56" y="278">Public site + Admin CMS + Webinar</text>
+  </g>
+
+  <g transform="translate(620 54)">
+    <rect width="524" height="272" rx="20" fill="#0E1728" stroke="#24324A" stroke-width="1.5"/>
+    <text x="28" y="42" fill="#8BA3C7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" letter-spacing="1.5">HERO / ORCHESTRATION</text>
+
+    <path d="M120 150 H404" stroke="#24324A" stroke-width="2" fill="none"/>
+    <path d="M262 96 V204" stroke="#24324A" stroke-width="2" fill="none"/>
+    <circle cx="262" cy="150" r="10" fill="#101A2E" stroke="#FFB900" stroke-width="2"/>
+
+    <g transform="translate(48 78)">
+      <rect width="144" height="72" rx="14" fill="#132033" stroke="#007DCC" stroke-width="2"/>
+      <text x="18" y="30" fill="#5EB6EF" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">CONTEXT</text>
+      <text x="18" y="52" fill="#F7F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="600">업무 맥락</text>
+    </g>
+    <g transform="translate(332 78)">
+      <rect width="144" height="72" rx="14" fill="#132033" stroke="#D10056" stroke-width="2"/>
+      <text x="18" y="30" fill="#F06A9A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">DECISION</text>
+      <text x="18" y="52" fill="#F7F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="600">판단 기준</text>
+    </g>
+    <g transform="translate(48 186)">
+      <rect width="144" height="72" rx="14" fill="#132033" stroke="#FFB900" stroke-width="2"/>
+      <text x="18" y="30" fill="#FFD56A" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">TOOLS</text>
+      <text x="18" y="52" fill="#F7F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="600">도구 연결</text>
+    </g>
+    <g transform="translate(332 186)">
+      <rect width="144" height="72" rx="14" fill="#132033" stroke="#B2054C" stroke-width="2"/>
+      <text x="18" y="30" fill="#E57A9C" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14">OUTPUT</text>
+      <text x="18" y="52" fill="#F7F4EE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="600">운영 결과</text>
+    </g>
+  </g>
+</svg>
