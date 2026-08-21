@@ -21,3 +21,12 @@
 - [x] Add responsive and accessibility verification for desktop and mobile
 - [x] Write and run Vitest coverage for content, permissions, registration, CSV, and upload helpers
 - [x] Save final checkpoint after all completed items are marked complete
+
+- [x] Review taste-skill guidance from https://github.com/Leonxlnx/taste-skill and translate it into Agentro design decisions
+- [x] Refine visual tokens, typography hierarchy, spacing rhythm, surface treatment, and interactive states across public pages
+- [x] Strengthen Home hero, navigation, cards, section transitions, and conversion CTAs using the taste-skill direction
+- [x] Refine webinar Orb composition, form card, and trust/benefit presentation
+- [x] Refine instructor and program layouts with more editorial portfolio character
+- [x] Improve admin dashboard hierarchy, navigation, tables, and editor affordances
+- [x] Re-run desktop/mobile screenshots, TypeScript, and Vitest checks after the design pass
+- [ ] Save a new design refinement checkpoint
