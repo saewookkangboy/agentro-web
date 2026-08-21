@@ -38,7 +38,6 @@ function AdminLoginGate({ oauthReady }: { oauthReady: boolean }) {
   const login = trpc.auth.loginWithPassword.useMutation({
     onSuccess: async () => {
       await utils.auth.me.invalidate();
-      window.location.reload();
     },
     onError: err => setError(err.message),
   });

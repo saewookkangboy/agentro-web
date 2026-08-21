@@ -23,7 +23,14 @@ let _db: ReturnType<typeof drizzle> | null = null;
 export async function getDb() {
   if (!_db && process.env.DATABASE_URL) {
     try {
-      _client = postgres(process.env.DATABASE_URL, { prepare: false, max: 1 });
+      // Fail fast on Vercel: unreachable DB previously hung login for up to 300s.
+      _client = postgres(process.env.DATABASE_URL, {
+        prepare: false,
+        max: 1,
+        connect_timeout: 5,
+        idle_timeout: 20,
+        max_lifetime: 60 * 5,
+      });
       _db = drizzle(_client);
     } catch (error) {
       console.warn("[Database] Failed to connect:", error);
@@ -32,6 +39,13 @@ export async function getDb() {
     }
   }
   return _db;
+}
+
+/** Persist user without blocking the request when the database is slow/down. */
+export function upsertUserBestEffort(user: InsertUser): void {
+  void upsertUser(user).catch(error => {
+    console.warn("[Database] Best-effort user upsert failed:", error);
+  });
 }
 
 export function buildLocalAdminUser(): User {

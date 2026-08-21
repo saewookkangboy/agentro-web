@@ -170,7 +170,8 @@ class SDKServer {
     return this.signSession(
       {
         openId,
-        appId: ENV.appId,
+        // Empty appId fails verifySession; keep password login usable without OAuth.
+        appId: ENV.appId || "agentro",
         name: options.name || "",
       },
       options
@@ -289,15 +290,15 @@ class SDKServer {
     const signedInAt = new Date();
 
     if (sessionUserId === LOCAL_ADMIN_OPEN_ID) {
-      await db.upsertUser({
+      // Password admin sessions must not block on DB latency/outages.
+      db.upsertUserBestEffort({
         openId: LOCAL_ADMIN_OPEN_ID,
         name: session.name || "Agentro Admin",
         loginMethod: "password",
         role: "admin",
         lastSignedIn: signedInAt,
       });
-      const localAdmin = await db.getUserByOpenId(LOCAL_ADMIN_OPEN_ID);
-      return localAdmin ?? db.buildLocalAdminUser();
+      return db.buildLocalAdminUser();
     }
 
     let user = await db.getUserByOpenId(sessionUserId);

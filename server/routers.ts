@@ -17,7 +17,7 @@ import {
   registerWebinarApplicant,
   saveAudit,
   saveSetting,
-  upsertUser,
+  upsertUserBestEffort,
 } from "./db";
 import {
   faqs,
@@ -57,7 +57,9 @@ export const appRouter = router({
             message: "비밀번호가 올바르지 않습니다.",
           });
         }
-        await upsertUser({
+        // Do not await DB here — a hung Postgres connection was blocking login
+        // until the Vercel function timed out (up to 300s).
+        upsertUserBestEffort({
           openId: LOCAL_ADMIN_OPEN_ID,
           name: "Agentro Admin",
           loginMethod: "password",
