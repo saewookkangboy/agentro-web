@@ -3,7 +3,8 @@ import fs from "fs";
 import path from "path";
 import { resolvePublicDir } from "./publicPath";
 
-const STATIC_FILE_EXT = /\.(?:js|css|map|svg|png|jpe?g|gif|webp|ico|woff2?|ttf|txt|webmanifest|json)$/i;
+const STATIC_FILE_EXT =
+  /\.(?:html?|js|css|map|svg|png|jpe?g|gif|webp|ico|woff2?|ttf|txt|webmanifest|json)$/i;
 
 export function serveStatic(app: Express) {
   const distPath = resolvePublicDir();
