@@ -150,7 +150,44 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+const isDev = process.env.NODE_ENV !== "production";
+
+function vitePluginConditionalAnalytics(): Plugin {
+  return {
+    name: "conditional-analytics",
+    transformIndexHtml(html) {
+      const endpoint = process.env.VITE_ANALYTICS_ENDPOINT?.trim();
+      const websiteId = process.env.VITE_ANALYTICS_WEBSITE_ID?.trim();
+      if (!endpoint || !websiteId) {
+        return html;
+      }
+      const src = `${endpoint.replace(/\/$/, "")}/umami`;
+      return {
+        html,
+        tags: [
+          {
+            tag: "script",
+            attrs: {
+              defer: true,
+              src,
+              "data-website-id": websiteId,
+            },
+            injectTo: "body",
+          },
+        ],
+      };
+    },
+  };
+}
+
+const plugins = [
+  react(),
+  tailwindcss(),
+  vitePluginConditionalAnalytics(),
+  ...(isDev
+    ? [jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()]
+    : []),
+];
 
 export default defineConfig({
   plugins,
@@ -167,6 +204,20 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+          if (id.includes("framer-motion")) return "motion";
+          if (id.includes("@tanstack") || id.includes("@trpc") || id.includes("superjson")) {
+            return "data";
+          }
+          if (id.includes("recharts") || id.includes("streamdown")) return "heavy";
+          if (id.includes("@radix-ui")) return "radix";
+          return "vendor";
+        },
+      },
+    },
   },
   server: {
     host: true,

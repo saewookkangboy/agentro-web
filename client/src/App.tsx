@@ -9,6 +9,38 @@ import Webinar from "./pages/Webinar";
 import Instructors from "./pages/Instructors";
 import Programs from "./pages/Programs";
 import AdminDashboard from "./pages/AdminDashboard";
+import Corporate, { Contact, Privacy, Terms } from "./pages/StaticPages";
 
-function Router(){return <Switch><Route path="/" component={Home}/><Route path="/webinar" component={Webinar}/><Route path="/instructors" component={Instructors}/><Route path="/instructors/:slug" component={Instructors}/><Route path="/programs" component={Programs}/><Route path="/programs/:slug" component={Programs}/><Route path="/admin" component={AdminDashboard}/><Route path="/admin/:section" component={AdminDashboard}/><Route path="/404" component={NotFound}/><Route component={NotFound}/></Switch>}
-export default function App(){return <ErrorBoundary><ThemeProvider defaultTheme="light" switchable><TooltipProvider><Toaster/><Router/></TooltipProvider></ThemeProvider></ErrorBoundary>}
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/webinar" component={Webinar} />
+      <Route path="/instructors" component={Instructors} />
+      <Route path="/instructors/:slug" component={Instructors} />
+      <Route path="/programs" component={Programs} />
+      <Route path="/programs/:slug" component={Programs} />
+      <Route path="/corporate" component={Corporate} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/admin" component={AdminDashboard} />
+      <Route path="/admin/:section" component={AdminDashboard} />
+      <Route path="/404" component={NotFound} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+export default function App() {
+  return (
+    <ErrorBoundary>
+      <ThemeProvider defaultTheme="light" switchable>
+        <TooltipProvider>
+          <Toaster />
+          <Router />
+        </TooltipProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
+  );
+}

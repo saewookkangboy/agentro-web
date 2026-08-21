@@ -16,8 +16,8 @@ const ROUTES = [
   { path: "/instructors/instructor-a", expect: ["강사", "프로필"] },
   { path: "/programs", expect: ["프로그램"] },
   { path: "/programs/agent-builder", expect: ["Agent", "프로그램"] },
-  { path: "/admin", expect: ["콘텐츠", "운영", "CONTROL"] },
-  { path: "/admin/content", expect: ["콘텐츠", "홈"] },
+  { path: "/admin", expect: ["Sign in", "콘텐츠", "운영", "CONTROL"] },
+  { path: "/admin/content", expect: ["Sign in", "콘텐츠", "홈"] },
   { path: "/404-missing-route", expect: ["404", "없", "Not", "찾"] },
 ];
 
@@ -66,8 +66,28 @@ async function measure(page, path, expectTokens) {
     };
   }
 
-  // Give React a beat to hydrate / query
-  await page.waitForTimeout(1200);
+  // Give React a beat to hydrate / query, and wait briefly for LCP
+  await page.waitForTimeout(800);
+  await page.evaluate(() => {
+    return new Promise((resolve) => {
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        resolve(null);
+      };
+      try {
+        const po = new PerformanceObserver((list) => {
+          if (list.getEntries().length) finish();
+        });
+        po.observe({ type: "largest-contentful-paint", buffered: true });
+      } catch {
+        finish();
+        return;
+      }
+      setTimeout(finish, 2500);
+    });
+  });
 
   const metrics = await page.evaluate(() => {
     const nav = performance.getEntriesByType("navigation")[0];
@@ -77,6 +97,7 @@ async function measure(page, path, expectTokens) {
     }));
     const resources = performance.getEntriesByType("resource");
     const transfer = resources.reduce((sum, r) => sum + (r.transferSize || 0), 0);
+    const docTransfer = nav ? nav.transferSize || 0 : 0;
     const lcpEntries = performance.getEntriesByType("largest-contentful-paint");
     const lcp = lcpEntries.length
       ? lcpEntries[lcpEntries.length - 1].startTime
@@ -93,7 +114,7 @@ async function measure(page, path, expectTokens) {
       ttfb: nav ? Math.round(nav.responseStart) : null,
       domContentLoaded: nav ? Math.round(nav.domContentLoadedEventEnd) : null,
       load: nav ? Math.round(nav.loadEventEnd) : null,
-      transferBytes: transfer,
+      transferBytes: transfer + docTransfer,
       resourceCount: resources.length,
       paints,
       lcp: lcp != null ? Math.round(lcp) : null,
@@ -154,10 +175,24 @@ async function main() {
   const browser = await chromium.launch({ headless: true });
   const context = await browser.newContext({
     viewport: { width: 1440, height: 900 },
+    serviceWorkers: "block",
     userAgent:
       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 AgentroPerfBot/1.0",
   });
+  await context.route("**/*", async (route) => {
+    const headers = {
+      ...route.request().headers(),
+      "cache-control": "no-cache",
+      pragma: "no-cache",
+    };
+    await route.continue({ headers });
+  });
   const page = await context.newPage();
+  await page.addInitScript(() => {
+    try {
+      performance.clearResourceTimings();
+    } catch {}
+  });
 
   if (SHARE) {
     const shareRes = await page.goto(SHARE, {

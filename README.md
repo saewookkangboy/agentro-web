@@ -82,7 +82,7 @@ pnpm dev
 
 ### Vercel 배포
 
-Express + Vite SPA를 Vercel Function으로 배포합니다. 엔트리는 루트 `server.ts`입니다.
+Express + Vite SPA를 Vercel Function으로 배포합니다. 엔트리는 빌드된 루트 `server.js`(Express 번들)입니다. 소스는 `server/vercel-entry.ts`입니다.
 
 1. **환경 변수** — `.env.example`을 참고해 Vercel Project Settings에 등록합니다.  
    `VITE_*` 변수는 **Build**와 **Runtime** 모두에 필요합니다.
@@ -109,6 +109,7 @@ vercel --prod        # Production
 | `VITE_APP_ID` | 앱 식별자 (서버·클라이언트) |
 | `VITE_OAUTH_PORTAL_URL` | 클라이언트 OAuth 포털 URL |
 | `VITE_FRONTEND_FORGE_API_URL` / `VITE_FRONTEND_FORGE_API_KEY` | 프론트 Forge(지도 등) |
+| `VITE_ANALYTICS_ENDPOINT` / `VITE_ANALYTICS_WEBSITE_ID` | Umami 분석 (둘 다 있을 때만 로드) |
 | `BUILT_IN_FORGE_API_URL` / `BUILT_IN_FORGE_API_KEY` | 스토리지·알림 등 내장 Forge API |
 | `PORT` | 서버 포트 (기본 `3000`, Vercel에서는 불필요) |
 

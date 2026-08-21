@@ -19,7 +19,7 @@ import {
   SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { startLogin } from "@/const";
+import { startLogin, isOAuthConfigured } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
 import { BookOpen, ClipboardList, FileText, LayoutDashboard, LogOut, PanelLeft, Settings, Users, Video } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
@@ -63,23 +63,27 @@ export default function DashboardLayout({
   }
 
   if (!user) {
+    const oauthReady = isOAuthConfigured();
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="flex flex-col items-center gap-8 p-8 max-w-md w-full">
           <div className="flex flex-col items-center gap-6">
             <h1 className="text-2xl font-semibold tracking-tight text-center">
-              Sign in to continue
+              관리자 로그인이 필요합니다
             </h1>
             <p className="text-sm text-muted-foreground text-center max-w-sm">
-              Access to this dashboard requires authentication. Continue to launch the login flow.
+              {oauthReady
+                ? "콘텐츠 운영 대시보드에 접근하려면 로그인하세요."
+                : "OAuth 환경 변수(VITE_OAUTH_PORTAL_URL, VITE_APP_ID)가 설정되지 않아 로그인을 시작할 수 없습니다."}
             </p>
           </div>
           <Button
             onClick={() => startLogin()}
             size="lg"
             className="w-full shadow-lg hover:shadow-xl transition-all"
+            disabled={!oauthReady}
           >
-            Sign in
+            {oauthReady ? "로그인" : "로그인 설정 필요"}
           </Button>
         </div>
       </div>

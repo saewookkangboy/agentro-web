@@ -34,7 +34,9 @@ export async function getUserByOpenId(openId: string) {
 }
 
 export async function getPublicContent() {
-  const db = await getDb(); if (!db) return null;
+  const empty = { settings: [], instructors: [], programs: [], faqs: [], webinar: null as null };
+  const db = await getDb();
+  if (!db) return empty;
   const [settings, publishedInstructors, publishedPrograms, publishedFaqs, webinar] = await Promise.all([
     db.select().from(siteSettings),
     db.select().from(instructors).where(eq(instructors.isPublished, 1)).orderBy(asc(instructors.sortOrder)),
@@ -46,7 +48,18 @@ export async function getPublicContent() {
 }
 
 export async function getAllAdminContent() {
-  const db = await getDb(); if (!db) return null;
+  const empty = {
+    settings: [],
+    instructors: [],
+    instructorItems: [],
+    programs: [],
+    programSteps: [],
+    faqs: [],
+    webinar: null as null,
+    applicants: [],
+  };
+  const db = await getDb();
+  if (!db) return empty;
   const [settings, instructorRows, itemRows, programRows, stepRows, faqRows, webinarRows, applicants] = await Promise.all([
     db.select().from(siteSettings).orderBy(asc(siteSettings.key)), db.select().from(instructors).orderBy(asc(instructors.sortOrder)),
     db.select().from(instructorItems).orderBy(asc(instructorItems.sortOrder)), db.select().from(programs).orderBy(asc(programs.sortOrder)),

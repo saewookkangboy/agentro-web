@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { eq } from "drizzle-orm";
+import { TRPCError } from "@trpc/server";
 import { COOKIE_NAME } from "../shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
@@ -22,7 +23,22 @@ export const appRouter = router({
     public: publicProcedure.query(() => getPublicContent()),
     instructor: publicProcedure.input(z.object({ slug: z.string() })).query(({ input }) => findInstructor(input.slug)),
     program: publicProcedure.input(z.object({ slug: z.string() })).query(({ input }) => findProgram(input.slug)),
-    registerWebinar: publicProcedure.input(z.object({ name: z.string().min(1), email: z.string().email(), role: z.string().optional(), consent: z.literal(true) })).mutation(async ({ input }) => { await registerWebinarApplicant(input); await notifyOwner({ title: "새 웨비나 사전 신청", content: `${input.name} (${input.email})님이 웨비나를 신청했습니다.` }); return { success: true } as const; }),
+    registerWebinar: publicProcedure.input(z.object({ name: z.string().min(1), email: z.string().email(), role: z.string().optional(), consent: z.literal(true) })).mutation(async ({ input }) => {
+      try {
+        await registerWebinarApplicant(input);
+      } catch (error) {
+        const message = error instanceof Error ? error.message : "등록에 실패했습니다.";
+        if (message.includes("Database unavailable")) {
+          throw new TRPCError({
+            code: "PRECONDITION_FAILED",
+            message: "신청 시스템을 준비 중입니다. 잠시 후 다시 시도해 주세요.",
+          });
+        }
+        throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "신청 처리 중 오류가 발생했습니다." });
+      }
+      await notifyOwner({ title: "새 웨비나 사전 신청", content: `${input.name} (${input.email})님이 웨비나를 신청했습니다.` });
+      return { success: true } as const;
+    }),
   }),
   admin: router({
     all: adminProcedure.query(() => getAllAdminContent()),
