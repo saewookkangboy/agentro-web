@@ -45,7 +45,7 @@ export function PublicFooter() {
   return (
     <footer className="footer">
       <div className="container footer-grid">
-        <div><Brand /><p style={{ marginTop: 14 }}>현업을 움직이는 AI 교육 플랫폼.</p></div>
+        <div><Brand surface="night" /><p style={{ marginTop: 14 }}>현업을 움직이는 AI 교육 플랫폼.</p></div>
         <div><h4>EXPLORE</h4><ul><li><Link href="/programs">프로그램</Link></li><li><Link href="/instructors">강사진</Link></li><li><Link href="/webinar">웨비나</Link></li></ul></div>
         <div><h4>FOR TEAMS</h4><ul><li><Link href="/corporate">기업교육</Link></li><li><Link href="/contact">문의하기</Link></li></ul></div>
         <div><h4>POLICY</h4><ul><li><Link href="/privacy">개인정보처리방침</Link></li><li><Link href="/terms">이용약관</Link></li></ul></div>
