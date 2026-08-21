@@ -15,12 +15,12 @@ const agenda = [
   { who: "최코치", body: <>25년차가 <strong>AI와 함께 회사를 나온 이야기</strong>, 그리고 기업 현장에서 본 &quot;AI를 쓰는 법과 못 쓰는 법&quot;</> },
   { who: "박코치", body: <>마케팅 에이전트가 <strong>여러 개 동시에 돌아가는 장면</strong>을 눈앞에서 시연합니다</> },
   { who: "황코치", body: <><strong>취미였던 영상이 업이 되기까지</strong> - 실제 만든 결과물과 그 과정 전부 공개</> },
-  { who: "강사 3인", body: <>그래서 <strong>당신은 무엇부터 만들면 되는지</strong></> },
+  { who: "코치 3인", body: <>그래서 <strong>당신은 무엇부터 만들면 되는지</strong></> },
 ];
 
 const coaches = [
   { initial: "최", name: "최코치", tag: "대기업 25년 → 퇴사", desc: "기업·개인 AI 컨설팅 코칭. 방금 강을 건넌 사람.", note: "컨설팅 기업 [　]개사" },
-  { initial: "박", name: "박코치", tag: "마케터 독립 10년차", desc: "Agent 전문 강사. 마케팅 전문성을 에이전트로 바꾼 사람.", note: "누적 수강생 [　]명" },
+  { initial: "박", name: "박코치", tag: "마케터 독립 10년차", desc: "Agent 전문 코치. 마케팅 전문성을 에이전트로 바꾼 사람.", note: "누적 수강생 [　]명" },
   { initial: "황", name: "황코치", tag: "코칭 독립 15년차", desc: "취미였던 영상이 수익이 된 사람. 기업 AI 강의 진행.", note: "제작 영상 [　]편" },
 ];
 
@@ -208,7 +208,7 @@ export default function Webinar() {
       <section className="section process">
         <div className="container">
           <div className="section-head">
-            <div className="eyebrow">Instructors</div>
+            <div className="eyebrow">Coaches</div>
             <h2 style={{ color: "#fff2f7" }}>
               우리는 10년, 15년이<br />걸렸습니다.<br />
               <span style={{ color: "#FFB900" }}>에이전트가 있는 당신은<br />다릅니다.</span>

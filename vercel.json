@@ -8,5 +8,10 @@
       "includeFiles": "public/**",
       "maxDuration": 30
     }
-  }
+  },
+  "redirects": [
+    { "source": "/instructors", "destination": "/coaches", "permanent": true },
+    { "source": "/instructors/:slug", "destination": "/coaches/:slug", "permanent": true },
+    { "source": "/admin/instructors", "destination": "/admin/coaches", "permanent": true }
+  ]
 }

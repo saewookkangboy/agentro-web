@@ -5,7 +5,7 @@
 # Agentro
 
 AI Agent / AX 교육을 위한 **공개 웹사이트**와 **운영자 CMS**입니다.  
-방문자는 홈·웨비나·강사·프로그램을 보고, 관리자는 같은 데이터를 대시보드에서 편집합니다.
+방문자는 홈·웨비나·코치·프로그램을 보고, 관리자는 같은 데이터를 대시보드에서 편집합니다.
 
 ---
 
@@ -17,8 +17,8 @@ AI Agent / AX 교육을 위한 **공개 웹사이트**와 **운영자 CMS**입�
 
 | 영역 | 역할 |
 | --- | --- |
-| **Public** | `/` 홈, `/webinar` 사전 신청, `/instructors`, `/programs` |
-| **Admin** | `/admin` CMS — 홈·Hero·커리큘럼, 강사, 프로그램, FAQ, 웨비나 신청자 |
+| **Public** | `/` 홈, `/webinar` 사전 신청, `/coaches`, `/programs` |
+| **Admin** | `/admin` CMS — 홈·Hero·커리큘럼, 코치, 프로그램, FAQ, 웨비나 신청자 |
 | **API** | Express + tRPC, Drizzle ORM, MySQL |
 | **Brand** | Color Hunt 팔레트 `#007DCC` / `#FFB900` / `#D10056` / `#B2054C` |
 
@@ -39,8 +39,8 @@ AI Agent / AX 교육을 위한 **공개 웹사이트**와 **운영자 CMS**입�
 
 - 오케스트레이션 Hero (노드 클릭 → 커리큘럼 스크롤, reduced-motion 대응)
 - 웨비나 사전 등록 폼, 유효성 검사, 제출 상태
-- 강사·프로그램 목록/상세, 공개·비공개 토글
-- 관리자 CRUD, 강사 사진 S3 업로드, 신청자 CSV export
+- 코치·프로그램 목록/상세, 공개·비공개 토글
+- 관리자 CRUD, 코치 사진 S3 업로드, 신청자 CSV export
 - Vitest로 콘텐츠·권한·등록·CSV·업로드 헬퍼 검증
 
 ---
@@ -145,7 +145,7 @@ assets/readme/   README SVG 비주얼
 | --- | --- |
 | `/` | 홈 (Hero, 커리큘럼, 프로세스, FAQ) |
 | `/webinar` | 웨비나 사전 신청 |
-| `/instructors`, `/instructors/:slug` | 강사 |
+| `/coaches`, `/coaches/:slug` | 코치 |
 | `/programs`, `/programs/:slug` | 프로그램 |
 | `/admin`, `/admin/:section` | 관리자 CMS |
 
@@ -157,7 +157,7 @@ assets/readme/   README SVG 비주얼
 - **Backend:** Express, tRPC 11, Zod
 - **Data:** Drizzle ORM, MySQL
 - **Auth:** OAuth + JWT 세션 쿠키 (`admin` role)
-- **Storage:** S3 호환 업로드 (강사 사진)
+- **Storage:** S3 호환 업로드 (코치 사진)
 
 ---
 

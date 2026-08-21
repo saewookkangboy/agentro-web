@@ -12,8 +12,8 @@ const OUT = process.env.OUT_JSON || "/tmp/agentro-perf-results.json";
 const ROUTES = [
   { path: "/", expect: ["Agentro", "AI"] },
   { path: "/webinar", expect: ["웨비나", "신청"] },
-  { path: "/instructors", expect: ["강사"] },
-  { path: "/instructors/instructor-a", expect: ["강사", "프로필"] },
+  { path: "/coaches", expect: ["코치"] },
+  { path: "/coaches/coach-a", expect: ["코치", "프로필"] },
   { path: "/programs", expect: ["프로그램"] },
   { path: "/programs/agent-builder", expect: ["Agent", "프로그램"] },
   { path: "/admin", expect: ["Sign in", "콘텐츠", "운영", "CONTROL"] },

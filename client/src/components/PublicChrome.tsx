@@ -14,7 +14,7 @@ export function PublicHeader() {
         <Brand />
         <nav className="nav-links" aria-label="주요 메뉴">
           <Link href="/programs">프로그램</Link>
-          <Link href="/instructors">강사진</Link>
+          <Link href="/coaches">코치진</Link>
           <Link href="/webinar">웨비나</Link>
           <Link href="/#process">운영 방식</Link>
         </nav>
@@ -32,7 +32,7 @@ export function PublicHeader() {
       {mobileOpen && (
         <nav className="mobile-menu" aria-label="모바일 주요 메뉴">
           <Link href="/programs" onClick={close}>프로그램</Link>
-          <Link href="/instructors" onClick={close}>강사진</Link>
+          <Link href="/coaches" onClick={close}>코치진</Link>
           <Link href="/webinar" onClick={close}>웨비나</Link>
           <Link href="/#process" onClick={close}>운영 방식</Link>
         </nav>
@@ -46,7 +46,7 @@ export function PublicFooter() {
     <footer className="footer">
       <div className="container footer-grid">
         <div><Brand surface="night" /><p style={{ marginTop: 14 }}>현업을 움직이는 AI 교육 플랫폼.</p></div>
-        <div><h4>EXPLORE</h4><ul><li><Link href="/programs">프로그램</Link></li><li><Link href="/instructors">강사진</Link></li><li><Link href="/webinar">웨비나</Link></li></ul></div>
+        <div><h4>EXPLORE</h4><ul><li><Link href="/programs">프로그램</Link></li><li><Link href="/coaches">코치진</Link></li><li><Link href="/webinar">웨비나</Link></li></ul></div>
         <div><h4>FOR TEAMS</h4><ul><li><Link href="/corporate">기업교육</Link></li><li><Link href="/contact">문의하기</Link></li></ul></div>
         <div><h4>POLICY</h4><ul><li><Link href="/privacy">개인정보처리방침</Link></li><li><Link href="/terms">이용약관</Link></li></ul></div>
         <div className="footer-admin-cell">

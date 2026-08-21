@@ -1,12 +1,12 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Redirect, Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Webinar from "./pages/Webinar";
-import Instructors from "./pages/Instructors";
+import Coaches from "./pages/Coaches";
 import Programs from "./pages/Programs";
 import AdminDashboard from "./pages/AdminDashboard";
 import Corporate, { Contact, Privacy, Terms } from "./pages/StaticPages";
@@ -16,14 +16,17 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/webinar" component={Webinar} />
-      <Route path="/instructors" component={Instructors} />
-      <Route path="/instructors/:slug" component={Instructors} />
+      <Route path="/coaches" component={Coaches} />
+      <Route path="/coaches/:slug" component={Coaches} />
+      <Route path="/instructors/:slug">{(params) => <Redirect to={`/coaches/${params.slug}`} />}</Route>
+      <Route path="/instructors"><Redirect to="/coaches" /></Route>
       <Route path="/programs" component={Programs} />
       <Route path="/programs/:slug" component={Programs} />
       <Route path="/corporate" component={Corporate} />
       <Route path="/contact" component={Contact} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/terms" component={Terms} />
+      <Route path="/admin/instructors"><Redirect to="/admin/coaches" /></Route>
       <Route path="/admin" component={AdminDashboard} />
       <Route path="/admin/:section" component={AdminDashboard} />
       <Route path="/404" component={NotFound} />
