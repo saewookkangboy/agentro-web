@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
     "build:client": "vite build && node scripts/sync-public.mjs",
+    "build:vercel-server": "esbuild server/vercel-entry.ts --bundle --platform=node --format=esm --outfile=server.js --packages=external",
+    "build:vercel": "pnpm run build:client && pnpm run build:vercel-server",
     "build": "pnpm run build:client && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc --noEmit",
