@@ -1,0 +1,20 @@
+{
+  "name": "Agentro",
+  "short_name": "Agentro",
+  "description": "AI Agent · AX 전환 교육과 컨설팅",
+  "icons": [
+    {
+      "src": "/agentro-appicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/agentro-appicon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#110712",
+  "background_color": "#fbfaf7",
+  "display": "standalone"
+}
