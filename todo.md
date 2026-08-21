@@ -35,3 +35,8 @@
 - [x] Apply IBM Plex Sans KR, IBM Plex Sans, Gowun Batang, Hahmlet, Noto Sans KR, Nanum Gothic, and Gowun Dodum through explicit role-based typography tokens across the site
 - [x] Verify typography hierarchy and responsive readability on public and admin routes
 - [x] Run TypeScript/Vitest checks and save the font refinement checkpoint
+
+- [x] Define the text-based Agentro wordmark treatment using the current Korean editorial font system
+- [x] Create a reusable SVG wordmark and compact SVG favicon with the Agentro rounded-square system motif
+- [x] Apply the brand assets to public navigation, webinar header, instructor/program headers, admin shell, page title, and favicon metadata
+- [x] Verify logo legibility and responsive sizing, then run checks and save the branding checkpoint

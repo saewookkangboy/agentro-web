@@ -25,6 +25,7 @@ import { BookOpen, ClipboardList, FileText, LayoutDashboard, LogOut, PanelLeft, 
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
+import Brand from "@/components/Brand";
 import { Button } from "./ui/button";
 
 const menuItems = [
@@ -173,9 +174,7 @@ function DashboardLayoutContent({
               </button>
               {!isCollapsed ? (
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="font-semibold tracking-tight truncate">
-                    Navigation
-                  </span>
+                  <Brand />
                 </div>
               ) : null}
             </div>
@@ -251,6 +250,7 @@ function DashboardLayoutContent({
             <div className="flex items-center gap-2">
               <SidebarTrigger className="h-9 w-9 rounded-lg bg-background" />
               <div className="flex items-center gap-3">
+                <Brand />
                 <div className="flex flex-col gap-1">
                   <span className="tracking-tight text-foreground">
                     {activeMenuItem?.label ?? "Menu"}

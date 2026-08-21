@@ -36,3 +36,8 @@ body{font-family:var(--sans)}h1,h2,h3,h4{font-family:var(--serif);font-weight:60
 
 /* concrete use of the remaining supplied font families */
 .footer p,.footer a,.footer li,.footer h4{font-family:var(--soft-sans),var(--sans)}.profile-list strong,.faq summary,.metric span,.runner-step strong{font-family:var(--round),var(--sans)}
+
+/* Agentro wordmark and favicon system */
+.brand{font-family:var(--editorial);font-weight:400;letter-spacing:-.045em;gap:11px}.brand-word{display:inline-block;line-height:1}.brand-mark{width:14px;height:14px;border-radius:4px;background:var(--primary);box-shadow:0 0 0 4px color-mix(in srgb,var(--primary) 14%,transparent),inset 0 0 0 1px color-mix(in srgb,var(--primary-foreground) 20%,transparent);position:relative;display:inline-block}.brand-mark-core{position:absolute;width:6px;height:6px;left:4px;top:4px;border-radius:2px;background:var(--mint)}.footer .brand{color:inherit}.footer .brand-mark{background:var(--mint);box-shadow:0 0 0 4px rgba(169,216,191,.12)}.footer .brand-mark-core{background:var(--night)}
+
+.brand-wordmark{display:block;width:122px;height:auto}.footer .brand-wordmark{filter:brightness(0) invert(1);opacity:.94}.orb-page .brand-wordmark{filter:brightness(0) invert(1);opacity:.96}@media (max-width:560px){.brand-wordmark{width:112px}}
