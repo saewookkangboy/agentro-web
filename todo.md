@@ -45,3 +45,8 @@
 - [x] Create optimized OG image assets for webinar and instructor profile sharing
 - [x] Add route-aware Open Graph and Twitter Card metadata for webinar and instructor pages
 - [x] Verify OG assets and metadata, run checks, and save the social sharing checkpoint
+
+- [x] Analyze the provided Agentic AI Hero reference and map its animation language to Agentro's brand
+- [x] Design an orchestration-style Hero animation state model with reduced-motion fallback
+- [x] Replace the Home Hero visual treatment while preserving Agentro copy, CTA, and mobile navigation
+- [x] Verify Hero animation performance, responsive behavior, accessibility, and save the Hero refinement checkpoint
