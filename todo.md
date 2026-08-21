@@ -29,4 +29,4 @@
 - [x] Refine instructor and program layouts with more editorial portfolio character
 - [x] Improve admin dashboard hierarchy, navigation, tables, and editor affordances
 - [x] Re-run desktop/mobile screenshots, TypeScript, and Vitest checks after the design pass
-- [ ] Save a new design refinement checkpoint
+- [x] Save a new design refinement checkpoint
