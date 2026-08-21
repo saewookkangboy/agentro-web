@@ -54,3 +54,8 @@
 - [x] Map Hero nodes to the corresponding curriculum track anchors
 - [x] Add click and keyboard activation with smooth scrolling and URL hash updates
 - [x] Verify focus states, reduced-motion behavior, mobile interaction, and save the navigation checkpoint
+
+- [x] Add an accessible floating button that smoothly returns the user to the Home Hero top
+- [x] Track curriculum scroll position and show the corresponding active state on Hero nodes
+- [x] Add temporary arrival highlighting to curriculum sections after Hero node navigation
+- [x] Verify desktop/mobile scrolling, keyboard behavior, reduced-motion behavior, tests, and save the interaction checkpoint

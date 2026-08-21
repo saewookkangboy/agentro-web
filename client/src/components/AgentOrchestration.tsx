@@ -1,6 +1,7 @@
 import { ArrowUpRight, BrainCircuit, Database, GitBranch, Sparkles, Wrench } from "lucide-react";
 
 type AgentOrchestrationProps = {
+  activeNodeId?: string | null;
   onNodeActivate: (targetId: string) => void;
 };
 
@@ -11,7 +12,7 @@ const nodes = [
   { label: "OUTPUT", title: "운영 결과", icon: GitBranch, className: "node-output", targetId: "curriculum-output" },
 ];
 
-export default function AgentOrchestration({ onNodeActivate }: AgentOrchestrationProps) {
+export default function AgentOrchestration({ activeNodeId, onNodeActivate }: AgentOrchestrationProps) {
   return (
     <div className="orchestration" role="img" aria-label="업무 맥락, 판단 기준, 도구 연결, 운영 결과가 하나의 Agent 시스템으로 연결되는 애니메이션">
       <div className="orchestration-grid" aria-hidden="true" />
@@ -22,7 +23,7 @@ export default function AgentOrchestration({ onNodeActivate }: AgentOrchestratio
       <div className="orchestration-line line-three" aria-hidden="true" />
       <div className="orchestration-line line-four" aria-hidden="true" />
       {nodes.map(({ label, title, icon: Icon, className, targetId }) => (
-        <button className={`agent-node ${className}`} key={label} type="button" onClick={() => onNodeActivate(targetId)} aria-label={`${title} 커리큘럼으로 이동`}>
+        <button className={`agent-node ${className} ${activeNodeId === targetId ? "is-active" : ""}`} key={label} type="button" onClick={() => onNodeActivate(targetId)} aria-label={`${title} 커리큘럼으로 이동`}>
           <span className="agent-node-icon"><Icon size={16} /></span>
           <span className="agent-node-copy"><span>{label}</span><strong>{title}</strong></span>
           <span className="agent-node-dot" aria-hidden="true" />
