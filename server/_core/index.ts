@@ -65,7 +65,9 @@ async function startServer() {
       next(error);
     }
   };
-  app.get(["/webinar", "/instructors", "/instructors/:slug"], renderSocialPage);
+  if (process.env.NODE_ENV !== "development") {
+    app.get(["/webinar", "/instructors", "/instructors/:slug"], renderSocialPage);
+  }
 
   // tRPC API
   app.use(

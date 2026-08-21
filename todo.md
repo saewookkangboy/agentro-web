@@ -68,3 +68,8 @@
 - [x] Audit the project for all legacy green color literals, green-named tokens, gradients, shadows, and inline styles
 - [x] Replace all green visual treatments with the Color Hunt blue/yellow/magenta/maroon palette across shared, public, and admin surfaces
 - [x] Verify no legacy green values remain, then run screenshots, TypeScript/Vitest, and save the palette cleanup checkpoint
+
+- [x] Apply the same global header menu to Programs and Instructors pages and detail views
+- [x] Remove the top text-based 관리자 button from public headers
+- [x] Add a distinct accessible admin icon link to the footer and preserve discoverability on mobile
+- [x] Verify cross-page navigation, responsive headers/footers, accessibility, tests, and save the navigation checkpoint
